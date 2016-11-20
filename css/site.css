@@ -39,26 +39,6 @@ main div {
     padding-bottom: 20%;
   }
 
- @media only screen and (max-width : 992px) {
-      .mail {
-          display: none;
-      }
-    }
-
-@media only screen and (min-width: 601px) {
-  .container {
-    width: 90%;
-  }
-}
-
-
-@media only screen and (min-width: 992px) {
-  .container {
-    width: 90%;
-  }
-}
-
-
 .test {
     background-color: #607d8b;
     color: white;
@@ -96,6 +76,10 @@ main div {
     color: white;
 }
 
+.card .card-content {
+    background-color: #313e44;
+}
+
 .li-background {
     background-color: white;
 }
@@ -121,8 +105,43 @@ main div {
 }
 
 .contents {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
+}
+
+.sourceCode {
+    background-color: white;
+    color: blue;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0 auto;
+    text-transform: lowercase;
+    width: 30%;
+}
+
+.definitionCount {
+    margin-left: 3em;
+    padding: 0 0 0 3em;
+    text-transform: lowercase;
+}
+
+.countTitle {
+    text-transform: uppercase;
+}
+
+.sourceLink {
+    color: white;
+
+}
+
+.tableScore {
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    text-transform: none;
+}
+td, th {
+    text-align: center;
 }
 
 .titleDefinition {
@@ -140,4 +159,55 @@ main div {
 
 .btn:hover, .btn-large:hover {
     background-color:  #304ffe;
+}
+
+@media only screen and (max-width : 992px) {
+    .mail {
+        display: none;
+    }
+
+    .sourceCode {
+        font-size: 13px;
+        width: 60%;
+    }
+  }
+
+@media only screen and (max-width: 848px) {
+    .sourceCode {
+        font-size: 12px;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .sourceCode {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 601px) {
+    .sourceCode {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+    width: 90%;
+    }
+    .sourceCode {
+    width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .sourceCode {
+        width: 40%;
+    }
 }

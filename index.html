@@ -1,368 +1,521 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 	<title>Statystyczna Analiza Danych</title>
 
 	<!-- CSS -->
 
-	<link rel="stylesheet" type="text/css" href="css/materialize.min.css"  media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css"  media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="css/jqmath.css"  media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="css/site.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="css/jqmath.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="css/site.css" media="screen,projection" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
 <body>
-		<!--MENU-->
-		<ul id="dropdownTest" class="dropdown-content">
-				<li class="testLink"><a href="#test13" id="dropTest13">Test 13</a></li>
-				<!--
+	<!--MENU-->
+	<ul id="dropdownTest" class="dropdown-content">
+		<li class="testLink"><a href="#test13" id="dropTest13">Test 13</a></li>
+		<!--
 				<li class="divider"></li>
 				<li class="testLink"><a href="#!">two</a></li>
 				<li class="divider"></li>
 				<li class="testLink"><a href="#!">three</a></li>
 				-->
-		</ul>
-		<ul id="nav-mobile" class="side-nav">
-				<a href="#index" id="linkIndex">Strona główna</a>			
-				<a href="#test13" id="linkTest13">Test 13</a>
-				<a class="" href="mailto:s12032@pjwstk.edu.pl"> Damian Junko - S12032</a>
-		</ul>
-<div class="navbar-fixed">
-	<nav class="indigo darken-3">
-		<div class="nav-wrapper container" id="navi">
-			
-			<a id="logo-container" href="#index" class="brand-logo">SAD 2</a>
-			<a class="mail" href="mailto:s12032@pjwstk.edu.pl" style="padding-left:10%"> Damian Junko - S12032</a>
+	</ul>
+	<ul id="nav-mobile" class="side-nav">
+		<a href="#index" id="linkIndex">Strona główna</a>
+		<a href="#test13" id="linkTest13">Test 13</a>
+		<a class="" href="mailto:s12032@pjwstk.edu.pl"> Damian Junko - S12032</a>
+	</ul>
+	<div class="navbar-fixed">
+		<nav class="indigo darken-3">
+			<div class="nav-wrapper container" id="navi">
 
-			<ul class="right hide-on-med-and-down" id="naviLarge">
-				<li>
-					<a id="linkIndexLarge" href="#index">Strona główna</a>						
-				</li>
-				<li>
-					<a class="dropdown-button" href="#!" data-activates="dropdownTest">Testy<i class="mdi mdi-menu-down right"></i></a>
-				</li>
-			</ul>	
-			
-			<a href="#" data-activates="nav-mobile" class="button-collapse">
-				<i class="mdi mdi-menu"></i>
-			</a>
-		</div>	
-	</nav>
-</div>	
-		<!-- Główna strona -->
-<main>
-	<div class="section scrollspy" id="index">
-		<div class="container center-align">
-			<h1 class="navPadding">Statystyczna analiza danych </h1>
+				<a id="logo-container" href="#index" class="brand-logo">SAD 2</a>
+				<a class="mail" href="mailto:s12032@pjwstk.edu.pl" style="padding-left:10%"> Damian Junko - S12032</a>
 
-			<div class="card-panel test" id="testBox">
-				<h4>Rozwiązane testy</h4>
-				<div class="push"></div>
-				<a id="test13Box" href="#test13" class="waves-effect waves-light btn-large">test 13</a>
-			</div>	
-		</div>
+				<ul class="right hide-on-med-and-down" id="naviLarge">
+					<li>
+						<a id="linkIndexLarge" href="#index">Strona główna</a>
+					</li>
+					<li>
+						<a class="dropdown-button" href="#!" data-activates="dropdownTest">Testy<i class="mdi mdi-menu-down right"></i></a>
+					</li>
+				</ul>
+
+				<a href="#" data-activates="nav-mobile" class="button-collapse">
+					<i class="mdi mdi-menu"></i>
+				</a>
+			</div>
+		</nav>
 	</div>
+	<!-- Główna strona -->
+	<main>
+		<div class="section scrollspy" id="index">
+			<div class="container center-align">
+				<h1 class="navPadding">Statystyczna analiza danych </h1>
 
-	<div class="section scrollspy hiddendiv" id="test13">
-		<div class="row">
-			<div class="container">
-				<div class="card-panel testRoz">
-					<span class="titleTest">TEST 13</span>
-					<span class="numberPackage">ZESTAW 03 </span>
+				<div class="card-panel test" id="testBox">
+					<h4>Rozwiązane testy</h4>
 					<div class="push"></div>
+					<a id="test13Box" href="#test13" class="waves-effect waves-light btn-large">test 13</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="section scrollspy hiddendiv" id="test13">
+			<div class="row">
+				<div class="container">
+					<div class="card-panel testRoz">
+						<span class="titleTest">TEST 13</span>
+						<span class="numberPackage">ZESTAW 03 </span>
+						<div class="push"></div>
 						<div class="titleTask">
 							Niech funkcja <span class="math">$$f: (0,1) → ℝ$$</span> będzie zadana wzorem
 							<span class="math">$$f(x) = c(x^2 - 28x - 209), x ∈ (0,1)$$</span>
 						</div>
 						<ul class="collapsible" data-collapsible="accordion">
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie I</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p class="contents">
-											Znaleźć stałą <span class="math">c</span> dla której <span class="math">$$∫_0_^1 \ \ f(x) \ \ dx = 1$$</span><br/>	
-											Podaj stałą <span class="math">c</span> z dokładnością do 5 miejsc dziesiętnych
-										</p>
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie I</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p class="contents">
+												Znaleźć stałą <span class="math">c</span> dla której <span class="math">$$∫_0_^1 \ \ f(x) \ \ dx = 1$$</span><br/>												Podaj stałą <span class="math">c</span> z dokładnością do 5 miejsc dziesiętnych
+											</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p class="contents">
+												<span class="titleDefinition">Funkcja gęstości prawdopodobieństwa</span><br/> Funkcja rzeczywista, która pozwala
+												wyrazić prawdopodobieństwo wystąpienia dowolnego zdarzenia B przy pomocy wartości całki Lebesgue'a z tej funkcji
+												po zbiorze B. O funkcji gęstości mówi się w kontekście rozkładów prawdopodobieństwa na prostej jak i wielowymiarowych.
+												Rozkłady mające gęstość nazywane są rozkładami ciągłymi. Często mówi się o gęstości zmiennej losowej w sensie
+												gęstości rozkładu zmiennej losowej. Niech P będzie rozkładem prawdopodobieństwa w przestrzeni <span class="math">$$ℝ^N$$.</span>												Funkcję borelowską <span class="math">$$f:\ \ ℝ^N → ℝ$$</span> nazywamy gęstością rozkładu $$P$$, gdy dla każdego
+												zbioru borelowskiego <span class="math">$$B ⊆ ℝ^N$$</span> <br/>
+												<span class="math">$$P(B) = ∫↙B \ \ f(x) \ \ dx$$</span> <br/> Jeśli <span class="math">$$f$$</span> jest gęstością
+												rozkładu $$P$$, to w szczególności, na mocy powyższej definicji:<br/>
+												<span class="math">$$∫↙{ℝ^N} \ \ f(x) \ \ dx = 1$$</span> <br/> W drugą stronę, każda nieujemna funkcja borelowska
+												f, spełniająca powyższy warunek, jest gęstością pewnego rozkładu prawdopodobieństwa.<br/>
+											</p>
+											<p class="contents">
+												<span class="titleDefinition">Całka</span><br/> Ogólne określenie wielu różnych, choć powiązanych ze sobą pojęć
+												analizy matematycznej. W artykule rachunek różniczkowy i całkowy podana jest historia ewolucji znaczenia samego
+												słowa całka. Najczęściej przez "całkę" rozumie się całkę oznaczoną lub całkę nieoznaczoną. Całki można sobie
+												wyobrazić jako sumy nieskończenie wielu nieskończenie małych wartości, takich jak np. wartość funkcji pomnożona
+												przez jej nieskończenie małą różniczkę: <span class="math">$$f(x) \ \ dx$$.</span> Jest to oczywiście określenie
+												nieścisłe i nieformalne, choć używane w początkach rachunku całkowego przez G. W. Leibniza. Dziś ma ono znaczenie
+												jedynie poglądowe i historyczne, a poszczególne rodzaje całek są definiowane ściśle. Są one szczegółowo opisane
+												w oddzielnych artykułach:
+												<div class="definitionCount">
+													<strong class="countTitle">całka oznaczona</strong>&nbsp Pole powierzchni między wykresem funkcji <span class="math">$$f(x)$$</span>													w pewnym przedziale <span class="math">$$[a,b]$$,</span> a osią odciętych, wzięte ze znakiem plus dla dodatnich
+													wartości funkcji i minus dla ujemnych.
+													<br/>
+													<strong class="countTitle">całka nieoznaczona</strong>&nbsp pojęcie odwrotne do pochodnej funkcji. Całkę oznaczoną
+													na przedziale <span class="math">$$[a,b]$$,</span> można też zdefiniować (tzw. całka Newtona-Leibniza) jako
+													różnicę między wartościami całki nieoznaczonej w punktach
+													<span class="math">$$b$$</span> oraz <span class="math">$$a$$.</span> Stąd obliczenie całki nieoznaczonej jest
+													często pierwszym krokiem przy obliczaniu całek oznaczonych. o całka równania różniczkowego – rozwiązanie równania
+													różniczkowego.
+													<br/>
+													<strong class="countTitle">Całka podwójna</strong>&nbsp Obecnie, całki n-krotne traktuje się jako całki Lebesgue'a
+													względem n-wymiarowej miary Lebesgue'a.
+													<br/>
+													<strong class="countTitle">Całka stochastyczna</strong>&nbsp specjalny rodzaj całki używany w rachunku prawdopodobieństwa
+													<br/>
+												</div>
+											</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p class="contents">
+												Wykonanie zadania i przedstawienie wyniku jest dość trywialne. Oblicznie stałej $$c$$ wykorzystując środowisko R wykonujemy
+												przy pomocy funkcji $$integrate$$.<br/> Kod poniżej prezentuje jak wykonać to zadanie.
+											</p>
+											<div class="sourceCode">
+												$$f = function(x) \ \ (x^2 - 28x + 209)$$<br/> 
+												$$c = 1\/as.numeric(integrate(f,0,1)[1])$$
+											</div>
+											<p class="contents">
+												Otrzymany wynik należy zaokrąglić do pięciu miejsc po przecinku.
+											</p>
+											<div class="sourceCode center">
+												0.00512
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Źródła</span>
+											<hr />
+											<p class="contents">
+												<p class="sourceLink">Funkcja gęstości<br/>
+													<a class="sourceLink" href="http://www.szkolnictwo.pl/szukaj,Funkcja_gęstości_prawdopodobieństwa">
+														<span class="definitionCount">http://www.szkolnictwo.pl/szukaj,Funkcja_gęstości_prawdopodobieństwa</span>
+													</a>
+												</p>												
+												<p class="sourceLink">Całka<br/>
+													<a class="sourceLink" href="http://encyklopedia.pwn.pl/haslo/calka;3882822.html">
+														<span class="definitionCount">http://encyklopedia.pwn.pl/haslo/calka;3882822.html</span>
+													</a><br/>
+													<a class="sourceLink" href="http://dydmat.mimuw.edu.pl/analiza-matematyczna-i/calka">
+														<span class="definitionCount">http://dydmat.mimuw.edu.pl/analiza-matematyczna-i/calka</span>
+													</a><br/>
+												</p>
+											</p>																												
+										</div>
 									</div>
 								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p class="contents">
-											<span class="titleDefinition">Funkcja gęstości prawdopodobieństwa</span><br/>
-											Funkcja rzeczywista, która pozwala wyrazić prawdopodobieństwo wystąpienia dowolnego zdarzenia B przy pomocy wartości całki Lebesgue'a z tej funkcji po zbiorze B. O funkcji gęstości mówi się w kontekście rozkładów prawdopodobieństwa na prostej jak i wielowymiarowych. Rozkłady mające gęstość nazywane są rozkładami ciągłymi. Często mówi się o gęstości zmiennej losowej w sensie gęstości rozkładu zmiennej losowej.
-											Niech P będzie rozkładem prawdopodobieństwa w przestrzeni <span class="math">$$ℝ^N$$.</span> Funkcję borelowską  <span class="math">$$f:\ \ ℝ^N → ℝ$$</span> nazywamy gęstością rozkładu <span class="math">P</span> gdy dla każdego zbioru borelowskiego <span class="math">$$B ⊆ ℝ^N$$</span> <br/>
-											<span class="math">$$P(B) = ∫↙B \ \ f(x) \ \ dx$$</span> <br/>
-											Jeśli <span class="math">f</span> jest gęstością rozkładu <span class="math">P,</span> to w szczególności, na mocy powyższej definicji:<br/>
-											<span class="math">$$∫↙{ℝ^N} \ \ f(x) \ \ dx = 1$$</span> <br/>
-											W drugą stronę, każda nieujemna funkcja borelowska f, spełniająca powyższy warunek, jest gęstością pewnego rozkładu prawdopodobieństwa.		
-										</p>
+							</li>
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie II</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p class="contents">
+												Niech zmienna losowa <span class="math">$$X$$</span> ma rozkład zadany gęstością <span class="math">$$f(.)$$.</span> Obliczyć momenty zwykłe <span class="math">$$m_i = EX^i$$</span> dla <span class="math">$$i = 1, 2, 3, 4$$</span> i momenty centralne <span class="math">$$μ_i = E(X - m_1)^i$$</span> dla <span class="math">$$i = 2, 3, 4$$.</span><br/>
+												Wartość każdego z momentów podaj z dokładnością do 5 miejsc dziesiętnych.
+											</p>
+										</div>
 									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p class="contents"> 
+												<span class="titleDefinition">Zmienna losowa</span><br/>
+												Zmienna losowa to funkcja $$X: Ω→R$$, dla której dla dowolnego borelowskiego zbioru $$B ⊂ R$$ zbiór:<br/>
+												$$\{ ω∶X(ω)∈B\}=\{X ∈B\}∈F$$
+												Innymi słowy, jest to taka funkcja $$X$$ na zbiorze zdarzeń elementarnych o wartościach liczbowych, dla której określone są prawdopodobieństwa przyjmowania przez $$X$$ wartości z każdego dowolnego zakresu. W rachunku prawdopodobieństwa interesuje nas rozkład zmiennej losowej, ewentualnie jej charakterystyki liczbowe. 
+											</p>
+											<p class="contents">
+												<span class="titleDefinition">Moment zwykły</span><br/>
+												Moment zwykły rzędu k zmiennej losowej to wartość oczekiwana k-tej potęgi tej zmiennej.<br/>
+												$$m_k = E(X^k) = \{\table Σ↙i \ \ x^k_ip_i \ \ (1); ∫^{∞}_{-∞} x^k \ \ f(x) \ \ dx \ \ (2)$$<br/>
+												Wzory (1) i (2) stosujemy odpowiednio dla zmiennej losowej o rozkładzie skokowym i ciągłym. 
+												Po podstawieniu $$k = 1$$, otrzymujemy wzór na wartość oczekiwaną, zatem wartość oczekiwana może być traktowana jako pierwszy moment zwykły.
+											</p>
+											<p class="contents">
+												<span class="titleDefinition">Moment centralny</span><br/>
+												Momentem centralnym zmiennej losowej X rzędu k nazywamy wartość $$c_k\ \ X = E(X- EX)^k$$, o ile istnieją $$EX$$ i $$E(X-EX)^k$$. 
+												Moment centralny drugiego rzędu nazywamy wariancją i oznaczamy $$VarX$$ albo $$D^2X$$.
+												Pierwiastek z wariancji nazywamy średnim odchyleniem standardowym, oznaczamy $$σ_X = √{VarX}$$.
+											</p>
+										</div>
 									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Źródła</span>
-										<hr />
-										<a href="http://www.szkolnictwo.pl/szukaj,Funkcja_gęstości_prawdopodobieństwa"> Funkcja gęstości</a
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie II</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p class="contents">
-											Niech zmienna losowa <span class="math">$$X$$</span> ma rozkład zadany gęstością <span class="math">$$f(.)$$.</span> Obliczyć momenty zwykłe <span class="math">$$m_i = EX^i$$</span> dla <span class="math">$$i = 1, 2, 3, 4$$</span> i momenty centralne <span class="math">$$μ_i = E(X - m_1)^i$$</span> dla <span class="math">$$i = 2, 3, 4$$.</span><br/>
-											Wartość każdego z momentów podaj z dokładnością do 5 miejsc dziesiętnych.
-										</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-							</div>
-						</li>
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie III</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p class="contents">
-											Znaleźć kwantyl rzędu <span class="math">$$α = 0.46$$.</span><br/>
-											Wartość kwantyla z dokładnością do 2 miejsc dziesiętnych.
-										</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-							</div>
-						</li>
-					</ul>
-				</div>			
-			</div>
-		</div>
-	</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p class="contents">
+												Obliczenie momentu zwykłego i centralnego zmiennej losowej jest prosta czynnością. 
+												Również w tym przypadku obliczyć trzeba całkę, a wykorzystując środowisko R wykonujemy
+												przy pomocy funkcji $$integrate$$.<br/>
+												Poniżej zaprezebtowany zostanie kod, który obliczy momenty cenrtalny i zwykły. 
+											</p>
+											<span class="titleDefinition">Moment zwykły</span><br/>
+											<div class="sourceCode">
+												$$f1 = function(x) \ \ (x*c*f(x))$$<br/>
+												$$f2 = function(x) \ \ (x^2*c*f(x))$$<br/>
+												$$f3 = function(x) \ \ (x^3*c*f(x))$$<br/>
+												$$f4 = function(x) \ \ (x^4*c*f(x))$$<br/>
+												$$m1 = as.numeric((integrate(f1,0,1)[1]))$$<br/>
+												$$m2 = as.numeric((integrate(f2,0,1)[1]))$$<br/>
+												$$m3 = as.numeric((integrate(f3,0,1)[1]))$$<br/>
+												$$m4 = as.numeric((integrate(f4,0,1)[1]))$$<br/>
+											</div>
+											<span class="titleDefinition">Moment centralny</span><br/>
+											<div class="sourceCode">
+												$$g2 = function(x) \ \ ((x-m1)^2*c*f(x))$$<br/>
+												$$g3 = function(x) \ \ ((x-m1)^3*c*f(x))$$<br/>
+												$$g4 = function(x) \ \ ((x-m1)^4*c*f(x))$$<br/>
+												$$u2 = as.numeric(integrate(g2, 0, 1)[1])$$<br/>
+												$$u3 = as.numeric(integrate(g3, 0, 1)[1])$$<br/>
+												$$u4 = as.numeric(integrate(g4, 0, 1)[1])$$<br/>
+											</div>
+											<p class="contents">
+												Otrzymany wynik należy zaokrąglić do pięciu miejsc po przecinku.
+											</p>
 
-	<div class="section scrollspy hiddendiv" id="test19">
-		<div class="row">
-			<div class="container">
-				<div class="card-panel testRoz">
-					<span style="float: left">TEST 13</span>
-					<span style="float: right">ZESTAW 03 </span>
-					<div class="push"></div>
-						<ul class="collapsible" data-collapsible="accordion">
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie I</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p> Lorem ipsum</p>
+											 <table class="tableScore center sourceCode">
+												<thead>
+												 <tr style="text-transform= uppercase">
+													<th data-field="id">Moment zwykły</th>
+													<th data-field="name">L.P.</th>
+													<th data-field="price">Moment zwykły</th>
+												</tr>
+												</thead>
+
+												<tbody>
+												<tr>
+													<td>0.48848</td>
+													<td>1</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>0.32184</td>
+													<td>2</td>
+													<td>0.08323</td>
+												</tr>
+												<tr>
+													<td>0.23968</td>
+													<td>3</td>
+													<td>0.00115</td>
+												</tr>
+												<tr>
+													<td>0.19083</td>
+													<td>4</td>
+													<td>0.01249</td>
+												</tr>												
+												</tbody>
+											</table>
+										</div>
 									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Źródła</span>
+											<hr />
+											<p class="contents">
+												<p class="sourceLink">zmienna losowa<br/>
+													<a class="sourceLink" href="http://prac.im.pwr.edu.pl/~agniesz/rachunek_prawd_MAEW104/wyklady/R_Pr_MAEW104_wyklad7_zmienna_los_dystrybuanta.pdf">
+														<span class="definitionCount">http://prac.im.pwr.edu.pl/~agniesz/rachunek_prawd_MAEW104/wyklady/R_Pr_MAEW104_wyklad7_zmienna_los_dystrybuanta.pdf</span>
+													</a>
+												</p>												
+												<p class="sourceLink">moment centralny<br/>
+													<a class="sourceLink" href="http://mini.wikidot.com/moment-centralny-zmiennej-losowej">
+														<span class="definitionCount">http://mini.wikidot.com/moment-centralny-zmiennej-losowej</span>
+													</a>
+												</p>
+												<p class="sourceLink">moment zwykły<br/>
+													<a class="sourceLink" href="http://dydmat.mimuw.edu.pl/analiza-matematyczna-i/calka">
+														<span class="definitionCount">http://dydmat.mimuw.edu.pl/analiza-matematyczna-i/calka</span>
+													</a><br/>
+												</p>
+											</p>																												
+										</div>
+									</div>	
 								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p> Lorem ipsum</p>
+							</li>
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie III</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p class="contents">
+												Znaleźć kwantyl rzędu <span class="math">$$α = 0.46$$.</span><br/>
+												Wartość kwantyla z dokładnością do 2 miejsc dziesiętnych.
+											</p>
+										</div>
 									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p class="contents">
+												<span class="titleDefinition">Kwantyl</span><br/>
+												statystyczny parametr służący do syntetycznego opisu populacji lub rozkładu prawdopodobieństwa zmiennej losowej. kwantyl rzędu $$q (0 < q < 1)$$ w populacji jest taką liczbą $$x_q$$, że 100 % elementów tej populacji ma wartość badanej cechy nie większą od $$x_q$$, np. w populacji ludzi analizowanych z punktu widzenia ich wieku $$x_0,60 = 38$$ oznacza, że 60% osób ma nie więcej niż 38 lat. w przypadku zmiennej losowej kwantyl rzędu $$q (0 < q < 1)$$ jest taką liczbą $$x_q$$, że prawdopodobieństwo przyjęcia przez tę zmienną losową wartości nie większej od $$x_q$$ jest równe $$q$$.
+											</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p class="contents">
+												Do obliczenia kwantylu rzędu $$α$$ użyjemy środowiska R oraz funkjce $$integrate$$.<br/>
+												Poniżej zaprezebtowany zostanie kod, który obliczy kwantyl. 
+											</p>
+											<div class="sourceCode">
+												$$D<-function(x)\{as.numeric(integrate(function(t)$$<br/>
+												$${c*(t^2-28*t+209)},0,x)[1])\}$$<br/>
+												$$d<-function(x)\{D(x)-0.46\}$$<br/>
+												$$uniroot(d,c(0,1))$$<br/>
+											</div>
+											<p class="contents">
+												Otrzymany wynik należy zaokrąglić do dwóćh miejsc po przecinku.
+											</p>
+											<div class="sourceCode center">
+												0.44
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Źródła</span>
+											<hr />
+											<p class="contents">
+												<p class="sourceLink">Kwantyl<br/>
+													<a class="sourceLink" href="http://encyklopedia.pwn.pl/haslo/kwantyl;3929578.html">
+														<span class="definitionCount">http://encyklopedia.pwn.pl/haslo/kwantyl;3929578.html</span>
+													</a>
+												</p>
+											</p>																												
+										</div>
+									</div>	
 								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-							</div>
-						</li>
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie II</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-							</div>
-						</li>
-						<li class="li-background">
-							<div class="collapsible-header task">Zadanie III</div>
-							<div class="collapsible-body">
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Treść</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Definicje</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Rozwiązanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Wynik</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-content">
-										<span class="card-title">Podsumowanie</span>
-										<hr />
-										<p> Lorem ipsum</p>
-									</div>
-								</div>	
-							</div>
-						</li>
-					</ul>
-				</div>		
+							</li>
+						</ul>
+					</div>			
+				</div>
 			</div>
 		</div>
-	</div>
+
+		<div class="section scrollspy hiddendiv" id="test19">
+			<div class="row">
+				<div class="container">
+					<div class="card-panel testRoz">
+						<span style="float: left">TEST 13</span>
+						<span style="float: right">ZESTAW 03 </span>
+						<div class="push"></div>
+							<ul class="collapsible" data-collapsible="accordion">
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie I</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Wynik</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Podsumowanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>	
+								</div>
+							</li>
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie II</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Wynik</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Podsumowanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>	
+								</div>
+							</li>
+							<li class="li-background">
+								<div class="collapsible-header task">Zadanie III</div>
+								<div class="collapsible-body">
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Treść</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Definicje</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Rozwiązanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Wynik</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-content">
+											<span class="card-title">Podsumowanie</span>
+											<hr />
+											<p> Lorem ipsum</p>
+										</div>
+									</div>	
+								</div>
+							</li>
+						</ul>
+					</div>		
+				</div>
+			</div>
+		</div>
 </main>
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large upTop">
+      <i class="mdi mdi-chevron-up"></i>
+    </a>    
+  </div>
 
 	<!-- SCRIPTS -->
 	<script src="js/jquery.js"></script>

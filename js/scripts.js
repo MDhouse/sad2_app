@@ -32,7 +32,19 @@ $(document).ready(function(){
     $("#nav-mobile").on("click", "#linkTest13", function(e){
         Test13();
     });
+////Pojawienie się przycisku który przesuwa do góry
+      $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.upTop').fadeIn();
+            } else {
+                $('.upTop').fadeOut();
+            }
+        }); 
 
+        $('.upTop').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
 
 
 });
