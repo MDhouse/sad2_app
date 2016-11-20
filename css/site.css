@@ -1,17 +1,143 @@
-body {
-    background-color: #E3F2FD !important;
-    padding: 20px;
+html {
+    height: 100%;
+}
+
+body { 
+   
+    background:
+	linear-gradient(
+		cyan,
+		transparent
+	),
+	linear-gradient(
+		-45deg,
+		magenta,
+		transparent
+	),
+	linear-gradient(
+		45deg,
+		yellow,
+		transparent
+	);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: round;
 }
 
 main {
-    height: 100%;
-    width: 80%;
     margin: 0 auto;
     padding: 20px;
-    overflow: auto;
+}
+
+main div {
+  padding: 20px;
+}
+
+.navPadding {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-bottom: 20%;
+  }
+
+ @media only screen and (max-width : 992px) {
+      .mail {
+          display: none;
+      }
+    }
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+.test {
+    background-color: #607d8b;
+    color: white;
+    text-transform: uppercase;
+}
+
+.testRoz {
+    background-color: #283593;
+    color: white;
+    text-transform: uppercase;
+}
+
+.testLink {
+    background-color: #607d8b;
+    color: white;
+    text-transform: uppercase;  
+}
+
+.dropdown-content li>a {
+    color: white;
 }
 
 .task {
     background-color: #304ffe !important;
     color: white;
+    text-transform: uppercase;
+}
+
+.collapsible-body {
+    padding: 0 4%;
+}
+
+.card {
+    background-color: #607d8b !important;
+    color: white;
+}
+
+.li-background {
+    background-color: white;
+}
+
+
+/*----------------------SPAN classes----------------------*/
+.titleTest{
+    float: left;
+}
+
+.numberPackage{
+    float: right;
+}
+
+.math {
+    text-transform: lowercase;
+    padding: 0 1.0%;
+}
+
+
+.titleTask{
+    padding: 0 0 3% 0;
+}
+
+.contents {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.titleDefinition {
+    font-size: 15px;
+    font-weight: 500;
+}
+/*----------------------BTN classes----------------------*/
+.btn, .btn-large {
+    background-color: #FF1200;
+}
+
+.btn:focus, .btn-large:focus {
+    background-color:  #304ffe;
+}
+
+.btn:hover, .btn-large:hover {
+    background-color:  #304ffe;
 }
