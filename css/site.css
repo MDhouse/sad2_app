@@ -1,49 +1,46 @@
 html {
     height: 100%;
-}
+    }
 
 body { 
    
     background:
-	linear-gradient(
-		cyan,
-		transparent
-	),
-	linear-gradient(
-		-45deg,
-		magenta,
-		transparent
-	),
-	linear-gradient(
-		45deg,
-		yellow,
-		transparent
-	);
+        linear-gradient(cyan, transparent),
+        linear-gradient(-45deg, magenta, transparent),
+	    linear-gradient(45deg, yellow, transparent);
     background-blend-mode: multiply;
     background-attachment: fixed;
     background-repeat: round;
-}
+    }
 
 main {
     margin: 0 auto;
     padding: 20px;
-}
+    }
 
 main div {
-  padding: 20px;
-}
+    padding: 20px;
+    }
 
 .navPadding {
     margin: 0 auto;
     max-width: 1280px;
     padding-bottom: 20%;
-  }
+    }
 
-.test {
-    background-color: #607d8b;
-    color: white;
-    text-transform: uppercase;
-}
+
+/*INDEX*/
+    .testPanel {
+        background-color: #607d8b;
+        color: white;
+        text-transform: uppercase;
+        }   
+    .testBtnBox {
+        
+    }
+
+
+
 
 .testRoz {
     background-color: #283593;
@@ -148,6 +145,7 @@ td, th {
     font-size: 15px;
     font-weight: 500;
 }
+
 /*----------------------BTN classes----------------------*/
 .btn, .btn-large {
     background-color: #FF1200;
@@ -160,6 +158,9 @@ td, th {
 .btn:hover, .btn-large:hover {
     background-color:  #304ffe;
 }
+
+
+/*----------------------MEDIA configuraction----------------------*/
 
 @media only screen and (max-width : 992px) {
     .mail {

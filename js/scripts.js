@@ -1,15 +1,9 @@
-
 $(document).ready(function(){
-
-
-    $(".button-collapse").sideNav({
-        closeOnClick: true 
-    });
-
-     $('.dropdown-button').dropdown({      
-        belowOrigin: true, 
-        alignment: 'right' 
-    });
+    var button = [{
+        name: ["test 13"],
+        id: ["test13"],
+        href: ["#test13"]
+    }];
 
 ////Strona głowna rózne warianty
     $("#nav-mobile").on("click", "#linkIndex", function(e){
@@ -22,8 +16,10 @@ $(document).ready(function(){
         Index();
     });
 
+
+
 ////// Odpalenie testu 13
-    $("#testBox").on("click", "#test13Box", function(e){
+    $(".testBtnBox").on("click", "#test13Box", function(e){
         Test13();
     });
     $("#dropdownTest").on("click", "#dropTest13", function(e){
@@ -32,21 +28,6 @@ $(document).ready(function(){
     $("#nav-mobile").on("click", "#linkTest13", function(e){
         Test13();
     });
-////Pojawienie się przycisku który przesuwa do góry
-      $(window).scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                $('.upTop').fadeIn();
-            } else {
-                $('.upTop').fadeOut();
-            }
-        }); 
-
-        $('.upTop').click(function(){
-            $("html, body").animate({ scrollTop: 0 }, 600);
-            return false;
-        });
-
-
 });
 
  
@@ -65,3 +46,4 @@ function Test13(){
             $("#test13").removeClass("hiddendiv");         
         });
 }
+
