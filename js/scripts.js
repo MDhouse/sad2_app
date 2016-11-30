@@ -1,9 +1,19 @@
 $(document).ready(function(){
-    var button = [{
+
+    var test = [{
         name: ["test 13"],
-        id: ["test13"],
-        href: ["#test13"]
+        href: ["#test13"],
+        id_a: ["test13Box"],
+        id_drop: ["dropTest13"],
+        id_link: ["linkTest13"]
     }];
+
+    $.each(test, function(key){
+        $(".testBtnBox").html("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
+        $("#dropdownTest").html("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
+        $(".nav-mobile").html("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
+    });
+
 
 ////Strona głowna rózne warianty
     $("#nav-mobile").on("click", "#linkIndex", function(e){
@@ -30,7 +40,9 @@ $(document).ready(function(){
     });
 });
 
- 
+function firstLetter(text) {
+    return text.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function Index(){
     $("main .section").each(function () {            
