@@ -5,57 +5,52 @@ $(document).ready(function(){
         href: ["#test13"],
         id_a: ["test13Box"],
         id_drop: ["dropTest13"],
-        id_link: ["linkTest13"]
+        id_link: ["linkTest13"],
+    },{
+        name: ["test 19"],
+        href: ["#test19"],
+        id_a: ["test19Box"],
+        id_drop: ["dropTest19"],
+        id_link: ["linkTest19"],
     }];
 
-    $.each(test, function(key){
-        $(".testBtnBox").html("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
-        $("#dropdownTest").html("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
-        $(".nav-mobile").html("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
+    $.each(test, function(key, value){
+        $(".testBtnBox").append("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
+        $("#dropdownTest").append("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
+        $(".side-nav").append("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
     });
 
 
-////Strona głowna rózne warianty
-    $("#nav-mobile").on("click", "#linkIndex", function(e){
-        Index();
-    });
+
     $("#navi").on("click", "#logo-container", function(e){
-        Index();
+        transitionToSection("#index");
     });
      $("#naviLarge").on("click", "#linkIndexLarge", function(e){
-        Index();
+        transitionToSection("#index");
     });
 
-
-
-////// Odpalenie testu 13
-    $(".testBtnBox").on("click", "#test13Box", function(e){
-        Test13();
+    $(".testBtnBox").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+        transitionToSection(_id);
     });
-    $("#dropdownTest").on("click", "#dropTest13", function(e){
-        Test13();
+
+    $("#dropdownTest").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+
+        transitionToSection("test13");
     });
-    $("#nav-mobile").on("click", "#linkTest13", function(e){
-        Test13();
+
+    $(".side-nav").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+        if (_id.length < 10){
+            transitionToSection(_id);
+        }
     });
 });
 
-function firstLetter(text) {
-    return text.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function Index(){
-    $("main .section").each(function () {            
+function transitionToSection(id){
+    $("main .section").each(function () {          
             $(this).addClass("hiddendiv");
-            //$("#" + e).removeClass("hiddendiv");
-            $("#index").removeClass("hiddendiv");         
+            $(id).removeClass("hiddendiv");         
         });
 };
-
-function Test13(){
-    $("main .section").each(function () {            
-            $(this).addClass("hiddendiv");
-            $("#test13").removeClass("hiddendiv");         
-        });
-}
-

@@ -35,11 +35,18 @@ main div {
         color: white;
         text-transform: uppercase;
         }   
-    .testBtnBox {
-        
+    .testBtnBox, .titleTest {
+        display: flex;
+        justify-content: space-around;
     }
 
-
+.titleTest {
+        display: flex;
+        font-size: 30px;
+        font-weight: 600;
+        justify-content: space-around;
+        
+    }
 
 
 .testRoz {
@@ -51,12 +58,18 @@ main div {
 .testLink {
     background-color: #607d8b;
     color: white;
-    text-transform: uppercase;  
 }
 
 .dropdown-content li>a {
     color: white;
+    text-transform: capitalize;
 }
+
+ul > a {
+    text-transform: capitalize;
+}
+
+
 
 .task {
     background-color: #304ffe !important;
@@ -83,14 +96,6 @@ main div {
 
 
 /*----------------------SPAN classes----------------------*/
-.titleTest{
-    float: left;
-}
-
-.numberPackage{
-    float: right;
-}
-
 .math {
     text-transform: lowercase;
     padding: 0 1.0%;
