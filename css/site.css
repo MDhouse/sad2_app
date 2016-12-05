@@ -72,9 +72,12 @@ ul > a {
 
 
 .task {
-    background-color: #304ffe !important;
+    background-color: #304ffe;
     color: white;
     text-transform: uppercase;
+}
+.task:hover {
+    background-color: #313e44;
 }
 
 .collapsible-body {
@@ -101,6 +104,10 @@ ul > a {
     padding: 0 1.0%;
 }
 
+.centerEquation {
+    display: flex;
+    justify-content: center;
+}
 
 .titleTask{
     padding: 0 0 3% 0;
@@ -118,7 +125,16 @@ ul > a {
     font-style: italic;
     margin: 0 auto;
     text-transform: lowercase;
-    width: 30%;
+    width: 60%;
+}
+
+.defineList {
+    list-style-type: disc;
+    margin-left: 7%;
+}
+.defineList li {
+    list-style-type: disc;
+    
 }
 
 .definitionCount {
@@ -214,6 +230,6 @@ td, th {
 
 @media only screen and (min-width: 1280px) {
     .sourceCode {
-        width: 40%;
+        width: 70%;
     }
 }

@@ -36,8 +36,7 @@ $(document).ready(function(){
 
     $("#dropdownTest").on("click", "a", function(e){
         var _id = $(this).attr("href");
-
-        transitionToSection("test13");
+        transitionToSection(_id);
     });
 
     $(".side-nav").on("click", "a", function(e){
