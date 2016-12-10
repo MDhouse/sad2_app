@@ -107,6 +107,7 @@ ul > a {
 .centerEquation {
     display: flex;
     justify-content: center;
+    margin: 0 0 3% 0;
 }
 
 .titleTask{

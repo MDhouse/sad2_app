@@ -12,6 +12,12 @@ $(document).ready(function(){
         id_a: ["test19Box"],
         id_drop: ["dropTest19"],
         id_link: ["linkTest19"],
+    },{
+        name: ["test 22"],
+        href: ["#test22"],
+        id_a: ["test22Box"],
+        id_drop: ["dropTest22"],
+        id_link: ["linkTest22"],
     }];
 
     $.each(test, function(key, value){
