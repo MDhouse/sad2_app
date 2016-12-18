@@ -26,7 +26,12 @@ $(document).ready(function(){
         $(".side-nav").append("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
     });
 
+    var i = test.length;
+    var _id = test[i-1].id_a;
 
+    $("#" + _id).append("<i class='mdi mdi-checkbox-marked-circle-outline right'></i>");
+    //$("#" + _id).addClass("tooltipped").attr("data-position", "bottom").attr("data-delay", "50").attr("data-tooltip", "Najnowszy test");
+    $(".mdi-checkbox-marked-circle-outline").attr("style", "color:yellow");
 
     $("#navi").on("click", "#logo-container", function(e){
         transitionToSection("#index");

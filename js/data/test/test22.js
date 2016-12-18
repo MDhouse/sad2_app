@@ -206,8 +206,8 @@ $(document).ready(function () {
                         "<span class='centerEquation math'>$$EX= ∑_(i=1)^n x_i *P(X= x_i )= ∑_(i=1)^n x_i * p_i$$</span>" +
                             "<li>$$•\ \ $$rozkład ciągły</li><br/>" +
                         "<span class='centerEquation math'>$$EX= ∫_Ω x*f(x)dx$$</span>" +
-                            "<li>$$•\ \ $$rozkład mieszany</li></ul><br/>" +
-                        "<span class='centerEquation math'>$$EX=  ∫_Ω x*f(x)dx + ∑_(i=1)^n x_i *P(X= x_i )$$</span>"] }, {
+                            "<li>$$•\ \ $$rozkład mieszany</li><br/>" +
+                        "<span class='centerEquation math'>$$EX=  ∫_Ω x*f(x)dx + ∑_(i=1)^n x_i *P(X= x_i )$$</span></ul>"] }, {
             id: [4],
             name: ["Prawdopodobieństwo"],
             href: ["http://www.naukowiec.org/wiedza/matematyka/prawdopodobienstwo_834.html"],
@@ -233,7 +233,7 @@ $(document).ready(function () {
                                 "co w konsekwencji daje teoretyczną miarę zajścia danego zdarzenia. Wartość prawdopodobieństwa " +
                                 "wyznacza się najczęściej badając symetrię układu występowania zdarzeń elementarnych, szukając " +
                                 "proporcji lub kształtu doświadczenia losowego, bywa też i tak, że wartość wylicza się na podstawie " + 
-                                "wyników otrzymanych z bardzo dużej ilości powtórzonych doświadczeń losowych.</p>"] }, {
+                                "wyników otrzymanych z bardzo dużej ilości powtórzonych doświadczeń losowych.</p></ul>"] }, {
             id: [5],
             name: ["Nierówność Czebyszewa"],
             href: ["http://encyklopedia.naukowy.pl/Nierówność_Czebyszewa"],
@@ -271,6 +271,6 @@ $(document).ready(function () {
                         "Innymi słowy powyższy wzór jest to funkcja rozkładu prawdopodobieństwa. Podstawowe charakterystyki rozkładu:</p><br/>" +
                         "<ul class='defineList'><li>$$•\ \ $$ Wartość oczekiana </li><br/>" +
                         "<span class='centerEquation math'>$$E(X) = np$$</span>" +
-                        "<li>$$•\ \ $$ Wariancja</li></ul><br/>" + 
-                        "<span class='centerEquation math'>$$E(X) = npq$$</span>"] }];
+                        "<li>$$•\ \ $$ Wariancja</li><br/>" + 
+                        "<span class='centerEquation math'>$$E(X) = npq$$</span></ul>"] }];
 });

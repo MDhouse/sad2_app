@@ -8,6 +8,8 @@ $(document).ready( function(){
         alignment: 'right' 
     });
 
+     $(".tooltipped").tooltip();
+     
     //////////Zmienne z danymi//////////////////
     ////Pojawienie się przycisku który przesuwa do góry
     $(window).scroll( function(){
