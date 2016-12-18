@@ -64,9 +64,7 @@ $("#test19-taskSection").on("click", "li > div",function(){
     var id = _id.substring(0, _id.indexOf("Id"));
     var _active = $(this).attr("class").indexOf("active");
 
-    console.log(id);
     if (_active < 0) {
-        console.log(id);
         if(id != "test19-task" && id != "test19-solution"){
             $("#" + id).html("");
         }        

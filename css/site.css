@@ -107,7 +107,11 @@ ul > a {
 .centerEquation {
     display: flex;
     justify-content: center;
-    margin: 0 0 3% 0;
+    margin: 2% 0 0 0;
+}
+
+.leftContent {
+    padding: 2em;
 }
 
 .titleTask{
@@ -125,7 +129,7 @@ ul > a {
     font-size: 14px;
     font-style: italic;
     margin: 0 auto;
-    text-transform: lowercase;
+    text-transform: none;
     width: 60%;
 }
 
@@ -135,7 +139,12 @@ ul > a {
 }
 .defineList li {
     list-style-type: disc;
-    
+    padding-top: 5%;
+    display: inline;
+}
+
+.collapsible-body p {
+    padding: 1%;
 }
 
 .definitionCount {
