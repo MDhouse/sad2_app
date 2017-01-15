@@ -208,7 +208,8 @@ var taskBox = [{
     id_body: ["test19-taskGraf"]}];
 										
 var definition = [{
-    id: [1],
+    id: [13],
+    test: ["test19"],
     name: ["Zmienna losowa"],
     href: ["http://prac.im.pwr.edu.pl/~agniesz/rachunek_prawd_MAEW104/wyklady/R_Pr_MAEW104_wyklad7_zmienna_los_dystrybuanta.pdf"],
     contents: ["Zmienna losowa to funkcja $$X: Ω→R$$, dla której dla dowolnego borelowskiego zbioru $$B ⊂ R$$ zbiór:<br/>" +
@@ -216,7 +217,8 @@ var definition = [{
                 "Innymi słowy, jest to taka funkcja $$X$$ na zbiorze zdarzeń elementarnych o wartościach liczbowych, " + 
                 "dla której określone są prawdopodobieństwa przyjmowania przez $$X$$ wartości z każdego dowolnego zakresu. " +  
                 "W rachunku prawdopodobieństwa interesuje nas rozkład zmiennej losowej, ewentualnie jej charakterystyki liczbowe. "]}, {
-    id: [2],
+    id: [14],
+    test: ["test19"],
     name: ["Funkcja gęstości"],
     href: ["http://home.agh.edu.pl/~adan/wyklady/rpis3.pdf"],
     contents: ["Funkcją gęstości prawdopodobieństwa zmiennej losowej typu ciągłego nazywamy funkcję <span class='math'>$$f(x)$$</span>, " + 
@@ -227,7 +229,8 @@ var definition = [{
                 "<li>$$•\ \ $$W punktach, w których f jest ciągła zachodzi równość: <span class='math'>$$f(x)= F^' (x)$$</span>, funkcja gęstości jest pochodną dystrybuanty</li>" +
                 "<li>$$•\ \ $$Każda funkcja <span class='math'>$$f$$</span>, będąca gęstością prawdopodobieństwa, " +
                 "wyznacza jednoznacznie pewną dystrybuantę, a tym samym rozkład prawdopodobieństwa pewnej zmiennej.</li></ul>"]}, {
-    id: [3],
+    id: [15],
+    test: ["test19"],
     name: ["Dystrybuanta"],
     href: ["http://www.statystyka-zadania.pl/dystrybuanta/"],
     contents: ["Dystrybuanta rozkładu $$X$$ w punkcie <span class='math'>$$t$$</span> to prawdopodobieństwo," + 
@@ -244,7 +247,8 @@ var definition = [{
                 "to otwarta kropka będzie należeć do linii po lewej stronie, a zamalowana po prawej stronie</li>" +
                     "<li>$$•\ \ $$<span class='math'>$${lim}↙(n→ -∞)⁡ F_X (t) = 0$$</span></li>" + 
                     "<li>$$•\ \ $$<span class='math'>$${lim}↙(n→ ∞)⁡ F_X (t) = 1$$</span></li></ul>"]}, {
-    id: [4],
+    id: [16],
+    test: ["test19"],
     name: ["Wariancja"],
     href: ["http://www.naukowiec.org/wiedza/statystyka/wariancja_719.html"],
     contents: ["Wariancja jest podstawową miarą zmienności obserwowanych wyników." + 
@@ -260,7 +264,8 @@ var definition = [{
                 "Zmienność dotyczy zbioru danych, a nie jednej obserwacji, dlatego też statystyka to nauka o zbiorach obserwacji," + 
                 "a nie o jednym przypadku. Wariancje obliczamy z następującego wzoru:<br/>" +
                 "<span class='centerEquation math'>$$σ^2 = E(X-m)^2 = ∑_(i=1)^n(x_i-E)^2  p_i$$</span>"]}, {
-    id: [5],
+    id: [17],
+    test: ["test19"],
     name: ["Wartość oczekiwana"],
     href: ["http://www.statystyka-zadania.pl/wartosc-oczekiwana/"],
     contents: ["Wartość oczekiwana( wartość średnia, wartość przeciętna ) jest wartością spodziewaną w doświadczeniu losowym, " + 
@@ -277,7 +282,8 @@ var definition = [{
                 "<span class='centerEquation math'>$$EX= ∫_Ω x*f(x)dx$$</span>" +
                     "<li>$$•\ \ $$rozkład mieszany</li></ul><br/>" +
                 "<span class='centerEquation math'>$$EX=  ∫_Ω x*f(x)dx + ∑_(i=1)^n x_i *P(X= x_i )$$</span>"]}, {
-    id: [6],
+    id: [18],
+    test: ["test19"],
     name: ["Nierówność Jensena"],
     href: ["http://wm.staszic.waw.pl/materialy/5wm/wyklady/dowod-jensena.pdf"],
     contents: ["Nierówność Jensena. Jeżeli <span class='math'>$$f$$</span>  jest funkcją wypukłą w pewnym przedziale, to dla dowolnych " +
@@ -315,13 +321,11 @@ var definition = [{
    }, {
        id: ["3"],
        number: ["Zadanie III"],
-       contents: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/>"+
-                  "<span class='centerEquation math'>$$Pr(X ∈ (11.48, 11.96))$$</span>"]
+       contents: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (11.48, 11.96))$$</span>"]
    }, {
        id: ["4"],
        number: ["Zadanie IV"],
-       contents: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/>"+
-                  "<span class='centerEquation math'>$$Pr(X ∈ (10.45, 12.73))$$</span>"]
+       contents: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (10.45, 12.73))$$</span>"]
    }];
 
 });

@@ -5,13 +5,13 @@
         id_drop: ["dropTest13"],
         id_link: ["linkTest13"],
     },
-   /* {
+    {
         name: ["test 19"],
         href: ["#test19"],
         id_a: ["test19Box"],
         id_drop: ["dropTest19"],
         id_link: ["linkTest19"],
-    },*/
+    },
     {
         name: ["test 22"],
         href: ["#test22"],
@@ -106,7 +106,7 @@ $(document).ready( function(){
 
 
 var date =[{
-        id: ["1"],
+        id: [1],
         test: ["test22"],
         name: ["Zadanie I"],
         contentsTask: ["Zmienna losowa X przyjmuje wartości −4, 5, 10 odpowiednio z prawdopodobieństwami $$1/2, 2/5, 1/10$$. " +
@@ -130,7 +130,7 @@ var date =[{
                 "27<br/><br/>"+
                 "<img class='responsive-img' src='image/test22/wykres01.png'/>"],
         conclusion: ["Na podstwie wyników oraz wykresu wywnioskować można, że wartością spodziwaną jest 1. Wariancja mówi o tym, iż dane są mocno \"rozrzucone\" względem wartości oczekiwanej."] }, {
-        id: ["2"],
+        id: [2],
         test: ["test22"],
         name: ["Zadanie II"],
         contentsTask: ["Uczeń rzuca 5 razy piłka do kosza. Prawdopodobieństwo trafienia w jednym rzucie wynosi 0,25. " +
@@ -155,7 +155,7 @@ var date =[{
                     "WARTOŚĆ OCZEKIWANA<br/>" +
                     "1.25"],
         conclusion: ["Według rozkładu oraz wartości oczekiwanej spodziewać się należy, iż uczeń trafi do kosza 1.25 razy."] }, {
-        id: ["3"],
+        id: [3],
         test: ["test22"],
         name: ["Zadanie III"],
         contentsTask: ["Rzucamy 300 razy kostka do gry. Za sukces w pojedynczym rzucie uznamy zdarzenia polegajacego na tym, " +
@@ -176,7 +176,7 @@ var date =[{
                     "0.417"],
         conclusion: ["Prawdopodobieństwo wyrzucenia kostka 'szóstki' w 300 rzutach i przy założeniu, że liczba tych sukcesów będzie różniła się od 50 " +
                         "o więcej niż 10 wynosi 0.417."] }, {
-        id: ["4"],
+        id: [4],
         test: ["test22"],
         name: ["Zadanie IV"],
         contentsTask: ["W urnie znajdują się kule z numerami 1, 2, 3, 4, 5, 6 w stosunku ilościowym odpowiednio " +
@@ -204,7 +204,7 @@ var date =[{
                     "2.765"        ],
         conclusion: ["Wartość oczekwiana wynosi 3.111, w puli nie ma kuli o takiej wartości. Defacto możemy spodziewać się kuli o wartości 3. " +
                         "Możemy to wywnioskować, dzięki wartości wariancji. Mówi on o tym, że dane są skupionej wokół wartości względnej."] },{
-        id: ["5"],
+        id: [5],
         test: ["test16"],
         name: ["Zadanie I"],
         contentsTask: ["Niech $X = (X1, X2 . . . , Xn)$ bedzie próba losowa prosta o rozmiarze $n = 14$ taka, ze $8$ pomiarów $(X1, X2 . . . , X8)$ pochodzi z rozkładu o gestości <p class='center-align'>$$f_1(x) = Θ exp` `{ -Θx `} ` `dla `  x > 0$$</p> i ma postać $(2.55, 3.82, 5.11, 2.24, 3.68, 3.31, 4.63, 1.05)$, a druga cześć próby $(X9, X2 . . . , X14)$ pochodzi z rozkładu o gestości <p class='center-align'>$$f_2(x) = 2/6Θ x exp` `{ -Θ/6x^2 `} ` `dla `  x > 0$$</p>i ma postać $(7.788, 3.627, 7.063, 0.946, 10.113, 8.628)$. Znależć estymator najwiekszej wiarygodności dla parametru $Θ$."],
@@ -214,7 +214,7 @@ var date =[{
                         "> teta <- 14/(sum(X1) + (sum(X2^2)/6))"],
         result: ["$Θ$ wynosi: <p class='centerEquation'>0.1827501</p>"],
         conclusion: ["Estymator największej wiarygodności parametru $Θ$ wynosi: <p class='centerEquation'>0.1827501</p>"] }, {
-        id: ["6"],
+        id: [6],
         test: ["test16"],
         name: ["Zadanie II"],
         contentsTask: ["Niech $X = (X1, X2 . . . , Xn)$ bedzie próba losowa prosta o rozmiarze $n = 18$ taka, ze $10$ pomiarów $(X1, X2 . . . , X10)$ pochodzi z rozkładu jednostajnego na przedziale $$(0, Θ)$$ i ma postać <p class='center-align'>$$(2.820, 2.938, 1.657, 7.262, 3.246, 7.661, 5.529, 0.575, 6.121, 1.993)$$</p> A druga cześć próby $(X11, X2 . . . , X18)$ pochodzi z rozkładu jednostajnego na przedziale $(0, 2Θ)$ i ma postać <p class='center-align'>$(1.21, 11.83, 9.31, 12.50, 9.25, 10.69, 1.73, 4.63)$</p> Znależć estymator najwiekszej wiarygodności dla parametru."],
@@ -225,7 +225,63 @@ var date =[{
                         "> mX2 <- max(X2)<br/>" +
                         "> theta <- max(max(mX1),max(mX2))"],
         result: ["Maksimum z pierwszego rozkładu:<p>7.661</p>Maksimum z drugiego rozkładu:<p>12.5</p>Esymator największej wiarygodności parametru $Θ$ wynosi:<p>12.5</p>"],
-        conclusion: ["Estymatorem największej wiarygodności parametru $Θ$ okazało się maksimum drugiego rozkładu i wynosi:<p>12.5</p> Jest to 14 parametr próby."]}];
+        conclusion: ["Estymatorem największej wiarygodności parametru $Θ$ okazało się maksimum drugiego rozkładu i wynosi:<p>12.5</p> Jest to 14 parametr próby."]}, {
+        id: [7],
+        test: ["test19"],
+        name: ["Zadanie I"],
+        contentsTask: ["Obliczyć wartość oczekiwaną zmiennej losowej o gęstości $$fx(·)$$"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [8],
+        test: ["test19"],
+        name: ["Zadanie II"],
+        contentsTask: ["Naszkicować wykres gęstości zmiennej losowej $$X$$"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [9],
+        test: ["test19"],
+        name: ["Zadanie III"],
+        contentsTask: ["Obliczyć wariancję zmiennej losowej o gęstości $$fx(·)$$"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [10],
+        test: ["test19"],
+        name: ["Zadanie IV"],
+        contentsTask: ["Naszkicować wykres dystrybuanty zmiennej losowej $$X$$"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [11],
+        test: ["test19"],
+        name: ["Zadanie V"],
+        contentsTask: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (11.48, 11.96))$$</span>"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [12],
+        test: ["test19"],
+        name: ["Zadanie VI"],
+        contentsTask: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (10.45, 12.73))$$</span>"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [13],
+        test: ["test19"],
+        name: ["Zadanie VII"],
+        contentsTask: ["Znaleźć gęstość zmiennej losowej $Y = √^3X$"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}, {
+        id: [14],
+        test: ["test19"],
+        name: ["Zadanie VIII"],
+        contentsTask: ["Obliczyć $$EY$$ i sprawdzić, czy $$(EY)^3 > EX$$ (nierówność Jensena)"],
+        contentsSolution: [],
+        codeSource:[],
+        conclusion: []}];
 
 var definition = [{
             id: [1],
@@ -366,4 +422,91 @@ var definition = [{
             test: ["test16"],
             name: ["Funkcja wiarygodności"],
             href: ["https://www.google.pl/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=0ahUKEwjcsr_f7cTRAhVmJ5oKHULhAJ4QFghPMAg&url=http%3A%2F%2Fwww.ifd.uni.wroc.pl%2F~andab%2Fstatwyk5.doc&usg=AFQjCNHsH-7dagF_umog-0GnPpupJuVobg"],
-            contents: ["Funkcja wiarygodności ma charakter funkcji łącznego rozkładu prawdopodobieństwa, a posteriori dla próby  $X1,...,Xn$  przy założeniu niezależności poszczególnych pomiarów i jest dana wzorem: <p class='centerEquation'>$$L(x_1,...,x_n; Θ_1,...,Θ_k)=f(x_1; Θ_1,..., Θ_k)f(x_2; Θ_1,..., Θ_k)...f(x_3; Θ_1,..., Θ_k)$$</p> Metoda polega na przeświadczeniu, że zdarzenia o większym prawdopodobieństwie zachodzą częściej niż zdarzenia mniej prawdopodobne. Zakłada się, że uzyskana w losowaniu próba jest realizacją zdarzenia o największym prawdopodobieństwie, co jest równoważne warunkowi osiągnięcia maksimum przez funkcję wiarygodności. Jako estymatory nieznanych parametrów $Θ_1,...,Θ_k$ przyjmuje się takie $Θ↖{`^}_1,...,Θ↖{`^}_k$, dla których funkcja wiarygodności osiąga maksimum. Funkcja $ln L$ osiąga maksimum dla tych samych wartości parametrów co funkcja $L$, a łatwiej ją różniczkować. Poszukiwane jest więc maksimum logarytmicznej funkcji wiarygodności <p class='centerEquation'>$$l = ln` L =∑↖{n}↙{i = 1} ln ` f(x_1; Θ_1,..., Θ_k)$$</p>Warunek na maksimum funkcji $l$ przyjmuje postać układu równań:<p class='centerEquation'></p> Poza tym potrzeba i wystarcza, aby forma kwadratowa <p class='centerEquation'>$$∑↖{k}↙{i = 1}∑↖{k}↙{j = 1}({∂^2` l}/{∂Θ_i∂Θ_j})_{`table{Θ_i = Θ↖{`^}_i};{Θ_j = Θ↖{`^}_j}}` h_ih_j$$</p> była określona ujemnie. $h_i$ i $h_j$ są zmiennymi rzeczywistymi nie zerującymi się jednocześnie."]}]; 
+            contents: ["Funkcja wiarygodności ma charakter funkcji łącznego rozkładu prawdopodobieństwa, a posteriori dla próby  $X1,...,Xn$  przy założeniu niezależności poszczególnych pomiarów i jest dana wzorem: <p class='centerEquation'>$$L(x_1,...,x_n; Θ_1,...,Θ_k)=f(x_1; Θ_1,..., Θ_k)f(x_2; Θ_1,..., Θ_k)...f(x_3; Θ_1,..., Θ_k)$$</p> Metoda polega na przeświadczeniu, że zdarzenia o większym prawdopodobieństwie zachodzą częściej niż zdarzenia mniej prawdopodobne. Zakłada się, że uzyskana w losowaniu próba jest realizacją zdarzenia o największym prawdopodobieństwie, co jest równoważne warunkowi osiągnięcia maksimum przez funkcję wiarygodności. Jako estymatory nieznanych parametrów $Θ_1,...,Θ_k$ przyjmuje się takie $Θ↖{`^}_1,...,Θ↖{`^}_k$, dla których funkcja wiarygodności osiąga maksimum. Funkcja $ln L$ osiąga maksimum dla tych samych wartości parametrów co funkcja $L$, a łatwiej ją różniczkować. Poszukiwane jest więc maksimum logarytmicznej funkcji wiarygodności <p class='centerEquation'>$$l = ln` L =∑↖{n}↙{i = 1} ln ` f(x_1; Θ_1,..., Θ_k)$$</p>Warunek na maksimum funkcji $l$ przyjmuje postać układu równań:<p class='centerEquation'></p> Poza tym potrzeba i wystarcza, aby forma kwadratowa <p class='centerEquation'>$$∑↖{k}↙{i = 1}∑↖{k}↙{j = 1}({∂^2` l}/{∂Θ_i∂Θ_j})_{`table{Θ_i = Θ↖{`^}_i};{Θ_j = Θ↖{`^}_j}}` h_ih_j$$</p> była określona ujemnie. $h_i$ i $h_j$ są zmiennymi rzeczywistymi nie zerującymi się jednocześnie."]},{
+            id: [13],
+            test: ["test19"],
+            name: ["Zmienna losowa"],
+            href: ["http://prac.im.pwr.edu.pl/~agniesz/rachunek_prawd_MAEW104/wyklady/R_Pr_MAEW104_wyklad7_zmienna_los_dystrybuanta.pdf"],
+            contents: ["Zmienna losowa to funkcja $$X: Ω→R$$, dla której dla dowolnego borelowskiego zbioru $$B ⊂ R$$ zbiór:<br/>" +
+                        "<span class='centerEquation math'>$$\{ ω∶X(ω)∈B\}=\{X ∈B\}∈F$$</span><br/>" +
+                        "Innymi słowy, jest to taka funkcja $$X$$ na zbiorze zdarzeń elementarnych o wartościach liczbowych, " + 
+                        "dla której określone są prawdopodobieństwa przyjmowania przez $$X$$ wartości z każdego dowolnego zakresu. " +  
+                        "W rachunku prawdopodobieństwa interesuje nas rozkład zmiennej losowej, ewentualnie jej charakterystyki liczbowe. "]}, {
+            id: [14],
+            test: ["test19"],
+            name: ["Funkcja gęstości"],
+            href: ["http://home.agh.edu.pl/~adan/wyklady/rpis3.pdf"],
+            contents: ["Funkcją gęstości prawdopodobieństwa zmiennej losowej typu ciągłego nazywamy funkcję <span class='math'>$$f(x)$$</span>, " + 
+                        "określoną na zbiorze liczb rzeczywistych, taką że: <span class='math'>$$f(x)≥0 ⋀ a ≥ b$$</span> zachodzi: " +
+                        "<span class='centerEquation math'>$$∫_a^b f(x)dx=P(a&lt;X&lt;b)$$</span><br/>"+
+                        "Własności funkcji gęstości prawdopodobieństw:<br/>" +
+                        "<ul class='defineList'><li>$$•\ \ $$Funkcja gęstości jest nieujemna, <span class='math'>$$f ≥0$$</span></li>" +
+                        "<li>$$•\ \ $$W punktach, w których f jest ciągła zachodzi równość: <span class='math'>$$f(x)= F^' (x)$$</span>, funkcja gęstości jest pochodną dystrybuanty</li>" +
+                        "<li>$$•\ \ $$Każda funkcja <span class='math'>$$f$$</span>, będąca gęstością prawdopodobieństwa, " +
+                        "wyznacza jednoznacznie pewną dystrybuantę, a tym samym rozkład prawdopodobieństwa pewnej zmiennej.</li></ul>"]}, {
+            id: [15],
+            test: ["test19"],
+            name: ["Dystrybuanta"],
+            href: ["http://www.statystyka-zadania.pl/dystrybuanta/"],
+            contents: ["Dystrybuanta rozkładu $$X$$ w punkcie <span class='math'>$$t$$</span> to prawdopodobieństwo," + 
+                        "że zajdzie zdarzenie mniejsze bądź równe <span class='math'>$$t$$</span>, czyli:<br/>" +
+                        "<span class='centerEquation math'>$$f(t)=P(X ≤t)$$</span>" +
+                        "Własności dystrybuanty:<br/>" +
+                            "<ul class='defineList'><li>$$•\ \ $$<span class='math'>$$f(x)∈[0,1]$$</span> - dystrybuanta przyjmuje wartości z przedziału $$[0,1]$$." + 
+                        "Jest to prosty fakt, wynikający z tego, że najmniejszą szansą na zajście zdarzenia jest $$0%$$(w ogóle nie zajdzie), " + 
+                        "a największą 100%(zajdzie na pewno)</li>" +
+                            "<li>$$•\ \ $$<span class='math'>$$f(x)$$</span> – jest funkcją malejącą, czyli jeżeli weźmiemy dwa punkty " + 
+                        "<span class='math'>$$t_1$$</span> i <span class='math'>$$t_2$$</span>, to jeżeli <span class='math'>$$t_1 < t_2$$</span> " +
+                        "to <span class='math'>$$f(t_1) ≤ f(t_2)$$</span></li>" +
+                            "<li>$$•\ \ $$<span class='math'>$$f(x)$$</span> prawostronnie ciągła, czyli jeżeli na wykresie wystąpi nieciągłość typu skok, " + 
+                        "to otwarta kropka będzie należeć do linii po lewej stronie, a zamalowana po prawej stronie</li>" +
+                            "<li>$$•\ \ $$<span class='math'>$${lim}↙(n→ -∞)⁡ F_X (t) = 0$$</span></li>" + 
+                            "<li>$$•\ \ $$<span class='math'>$${lim}↙(n→ ∞)⁡ F_X (t) = 1$$</span></li></ul>"]}, {
+            id: [16],
+            test: ["test19"],
+            name: ["Wariancja"],
+            href: ["http://www.naukowiec.org/wiedza/statystyka/wariancja_719.html"],
+            contents: ["Wariancja jest podstawową miarą zmienności obserwowanych wyników." + 
+                        "Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wyników." + 
+                        "Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią" + 
+                        "a poszczególnymi wynikami czy może rozproszenie wyników jest duże, duża jest różnica poszczególnych wyników od średniej.<br/>" +
+                        "Jeżeli wariancja równa jest 0, to oznacza, że w nasze wyniki są identyczne, np. każdy uczeń dostał 5 z egzaminu." +
+                        "Często badacze posługują się terminem wariancja do określenia niemocy analitycznej." +
+                        "'Nie ma wariancji' w wynikach, oznacza, że nie ma żadnej różnicy pomiędzy zebranymi wynikami," +
+                        "a to oznacza, że statystyk nie ma praktycznie nic do analizowania." +
+                        "W jeszcze innym przypadku można spotkać się z prośbą o obliczenie statystyk dla jednej obserwacji." + 
+                        "Jeżeli mamy jedną obserwację to nie mamy przecież żadnej zmienności." +
+                        "Zmienność dotyczy zbioru danych, a nie jednej obserwacji, dlatego też statystyka to nauka o zbiorach obserwacji," + 
+                        "a nie o jednym przypadku. Wariancje obliczamy z następującego wzoru:<br/>" +
+                        "<span class='centerEquation math'>$$σ^2 = E(X-m)^2 = ∑_(i=1)^n(x_i-E)^2  p_i$$</span>"]}, {
+            id: [17],
+            test: ["test19"],
+            name: ["Wartość oczekiwana"],
+            href: ["http://www.statystyka-zadania.pl/wartosc-oczekiwana/"],
+            contents: ["Wartość oczekiwana( wartość średnia, wartość przeciętna ) jest wartością spodziewaną w doświadczeniu losowym, " + 
+                        "czyli w takim gdzie nie możemy z całkowitą pewnością określić wyniku. " +
+                        "Wartość oczekiwana jest najprostszym i najczęściej wykorzystywanym narzędziem służącym do analizy danych. " + 
+                        "Zazwyczaj wartość oczekiwaną zapisuje się jako EX lub E(X) gdzie X jest podanym rozkładem zmiennej losowej. " +
+                        "Wartość oczekiwana jest wartością spodziewaną, ale rzeczywistość może być inna. " +
+                        "Jednakże typując wartość oczekiwaną jako wynik zdarzenia losowego pomylimy się najmniej - tzn. wykonując kilka prób okaże się, " + 
+                        "że wartość oczekiwana jest najbardziej zbliżona rzeczywistości, czyli generuje najmniejszy błąd. " +
+                        "Do policzenia wartości oczekiwanej używa się następujących wzorów:<br/>" +
+                            "<ul class='defineList'><li>$$•\ \ $$rozkład dyskretny</li><br/>" +
+                        "<span class='centerEquation math'>$$EX= ∑_(i=1)^n x_i *P(X= x_i )= ∑_(i=1)^n x_i * p_i$$</span>" +
+                            "<li>$$•\ \ $$rozkład ciągły</li><br/>" +
+                        "<span class='centerEquation math'>$$EX= ∫_Ω x*f(x)dx$$</span>" +
+                            "<li>$$•\ \ $$rozkład mieszany</li></ul><br/>" +
+                        "<span class='centerEquation math'>$$EX=  ∫_Ω x*f(x)dx + ∑_(i=1)^n x_i *P(X= x_i )$$</span>"]}, {
+            id: [18],
+            test: ["test19"],
+            name: ["Nierówność Jensena"],
+            href: ["http://wm.staszic.waw.pl/materialy/5wm/wyklady/dowod-jensena.pdf"],
+            contents: ["Nierówność Jensena. Jeżeli <span class='math'>$$f$$</span>  jest funkcją wypukłą w pewnym przedziale, to dla dowolnych " +
+                        "liczb <span class='math'>$$x_1, x_2, ..., x_n, (x ≥ 2)$$</span>  z tego przedziału oraz liczb nieujemnych " +
+                        "<span class='math'>$$α_1, α_2, ..., α_n$$</span> takich, że <span class='math'>$$α_1 + α_2 + ... + α_n = 1$$</span> zachodzi nierówność:<br/>" +
+                        "<span class='centerEquation math'>$$f(∑↙{i = 1}↖{n} α_i \ \ f_i) ≤ ∑↙{i = 1}↖{n} α_i \ \ f(x_i)$$</span>" ]}
+            
+            
+            
+            
+            ]; 
