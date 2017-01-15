@@ -1,72 +1,93 @@
-$(document).ready(function(){
-
-    var test = [{
-        name: ["test 13"],
-        href: ["#test13"],
-        id_a: ["test13Box"],
-        id_drop: ["dropTest13"],
-        id_link: ["linkTest13"],
-    },{
-        name: ["test 19"],
-        href: ["#test19"],
-        id_a: ["test19Box"],
-        id_drop: ["dropTest19"],
-        id_link: ["linkTest19"],
-    },{
-        name: ["test 22"],
-        href: ["#test22"],
-        id_a: ["test22Box"],
-        id_drop: ["dropTest22"],
-        id_link: ["linkTest22"],
-    },{
-        name: ["test 16"],
-        href: ["#test16"],
-        id_a: ["test16Box"],
-        id_drop: ["dropTest16"],
-        id_link: ["linkTest16"],
-    }];
-
-    $.each(test, function(key, value){
-        $(".testBtnBox").append("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
-        $("#dropdownTest").append("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
-        $(".side-nav").append("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
-    });
-
-    var i = test.length;
-    var _id = test[i-1].id_a;
-
-    $("#" + _id).append("<i class='mdi mdi-checkbox-marked-circle-outline right'></i>");
-    //$("#" + _id).addClass("tooltipped").attr("data-position", "bottom").attr("data-delay", "50").attr("data-tooltip", "Najnowszy test");
-    $(".mdi-checkbox-marked-circle-outline").attr("style", "color:yellow");
-
-    $("#navi").on("click", "#logo-container", function(e){
-        transitionToSection("#index");
-    });
-     $("#naviLarge").on("click", "#linkIndexLarge", function(e){
-        transitionToSection("#index");
-    });
-
-    $(".testBtnBox").on("click", "a", function(e){
-        var _id = $(this).attr("href");
-        transitionToSection(_id);
-    });
-
-    $("#dropdownTest").on("click", "a", function(e){
-        var _id = $(this).attr("href");
-        transitionToSection(_id);
-    });
-
-    $(".side-nav").on("click", "a", function(e){
-        var _id = $(this).attr("href");
-        if (_id.length < 10){
-            transitionToSection(_id);
-        }
-    });
-});
-
+//Funkcja, która odsłania section, która zostanie wciśnieta
+/*
+    Opis
+        id - zmienna która przekazuje id selektora, który zostanie odsąnięty    
+*/
 function transitionToSection(id){
     $("main .section").each(function () {          
             $(this).addClass("hiddendiv");
             $(id).removeClass("hiddendiv");         
         });
+};
+
+/*
+    Funkcja ładująca dane dla odpowiednich testów
+        Zmiennne:
+    id - selector jaki jest aktualnie wybrany
+    date - polecenia oraz ich rozwiązania
+    definition - definicje i żródła
+*/
+function loadTest(id, date, definition){
+    var _renderHtml = [];
+    var _id = id.substring(0, id.indexOf("Id"));
+
+        if(_id.indexOf("task") > 0 ) {
+            _renderHtml.push("<div class='card' id='task'>");
+
+            $.each(date, function(key){
+                if(date[key].test == id.substring(0, 6)){
+                    _renderHtml.push("<div class='card-content'>" +
+                                            "<span class='card-title'>" + date[key].name + "</span>" +
+                                            "<hr />"+
+                                            "<p class='contents'>" + date[key].contentsTask + "</p></div>");    
+                };
+          
+            });
+
+            _renderHtml.push("</div>");
+            $("#" + _id).html(_renderHtml.join(" "));
+                                                                                           
+        } else if(_id.indexOf("definition") > 0) {
+            _renderHtml.push("<div class='card' id='definition'>");
+
+            $.each(definition, function(key){  
+                if(definition[key].test == id.substring(0, 6)){                
+                    _renderHtml.push("<div class='card-content'>" +
+                                            "<span class='card-title'>" + definition[key].name + "</span>" +
+                                            "<hr />"+
+                                            "<p class='contents'>" + definition[key].contents + "</p></div>");  	  
+                };            
+            });
+
+            _renderHtml.push("</div>");
+
+            $("#" + _id).html(_renderHtml.join(" "));
+                                                                                           
+        } else if(_id.indexOf("solution") > 0) {
+            $.each(date, function(key){
+                if(date[key].test == id.substring(0, 6)){                
+                    _renderHtml.push("<div class='card'><div class='card-content'>" +
+                                    "<span class='card-title'>" + date[key].name + "</span>" +
+                                    "<hr /><p class='contents'>" + date[key].contentsSolution + "</p>" +
+                                    "<span class='titleDefinition'>Rozwiązanie</span><br/>" +
+                                    "<div class='sourceCode'>" + date[key].codeSource +"</div>" + 
+                                    "<span class='titleDefinition'>Wynik</span><br/>" +
+                                    "<div class='sourceCode center'>"+ date[key].result+"</div>" +	   
+                                    "<span class='titleDefinition'>Podsumowanie</span>" +
+                                    "<hr /><p class='contents'>" + date[key].conclusion + "</p>" +    
+                                    "</div></div>");
+                };
+            });        
+
+            $("#" + _id).html(_renderHtml.join(" "));
+
+        } else if(_id.indexOf("source") > 0) {
+            _renderHtml.push("<div class='card'><div class='card-content'><p class='contents' id='source'>");
+          
+            $.each(definition, function(key){    
+                if(definition[key].test == id.substring(0, 6)){                             	
+                    _renderHtml.push("<span class='sourceLink'>" + definition[key].name + "<br/>" +
+                                        "<a class='sourceLink' href='" + definition[key].href + "'>" +
+                                        "<span class='definitionCount'>" + definition[key].href + "</span>" + 
+                                        "</a>" +
+                                        "</span><br/>");          
+                };      
+            });
+
+            _renderHtml.push("</p></div></div>");
+
+            $("#" + _id).html(_renderHtml.join(" "));
+        };                  
+       
+        jqMath.parseMath(document.body);
 };

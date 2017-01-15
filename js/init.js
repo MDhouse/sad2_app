@@ -1,75 +1,113 @@
-$(document).ready(function () {
+﻿    var test = [{
+        name: ["test 13"],
+        href: ["#test13"],
+        id_a: ["test13Box"],
+        id_drop: ["dropTest13"],
+        id_link: ["linkTest13"],
+    },
+   /* {
+        name: ["test 19"],
+        href: ["#test19"],
+        id_a: ["test19Box"],
+        id_drop: ["dropTest19"],
+        id_link: ["linkTest19"],
+    },*/
+    {
+        name: ["test 22"],
+        href: ["#test22"],
+        id_a: ["test22Box"],
+        id_drop: ["dropTest22"],
+        id_link: ["linkTest22"],
+    },{
+        name: ["test 16"],
+        href: ["#test16"],
+        id_a: ["test16Box"],
+        id_drop: ["dropTest16"],
+        id_link: ["linkTest16"],
+    }];
 
-    $("#test22-taskSection").on("click", "li > div",function(){
-    var _id = $(this).attr("id");
-    var id = _id.substring(0, _id.indexOf("Id"));
-    var _active = $(this).attr("class").indexOf("active");
+$(document).ready( function(){
+    $(".button-collapse").sideNav({
+        closeOnClick: true 
+    });
 
-    if (_active < 0) {    
-        $("#" + id).html("");    
-    } else {
-        if(id.indexOf("task") > 0) {
-            $("#" + id).append("<div class='card' id='task'>");
+     $('.dropdown-button').dropdown({      
+        belowOrigin: true, 
+        alignment: 'right' 
+    });
 
-            $.each(date, function(key){  
+     $(".tooltipped").tooltip();
 
-                $("#task").append("<div class='card-content'>" +
-                                        "<span class='card-title'>" + date[key].name + "</span>" +
-                                        "<hr />"+
-                                        "<p class='contents'>" + date[key].contentsTask + "</p></div>");      	              
-            });
+    //Pojawienie się przycisku, który przesuwa ekran do góry
+        $('.upTop').fadeOut();
+    $(window).scroll( function(){
+        if ($(this).scrollTop() > 100) {
+            $('.upTop').fadeIn();
+        } else {
+            $('.upTop').fadeOut();
+        };
+    }); 
 
-            $("#" + id).append("</div>");
-                                                                                           
-        } else if(id.indexOf("definition") > 0) {
-            $("#" + id).append("<div class='card' id='definition'>");
+    //Przesunięcie ekranu do góry po kliknięciu przycisku o klasie .upTop
+    $('.upTop').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+    });
 
-            $.each(definition, function(key){  
-
-                $("#definition").append("<div class='card-content'>" +
-                                        "<span class='card-title'>" + definition[key].name + "</span>" +
-                                        "<hr />"+
-                                        "<p class='contents'>" + definition[key].contents + "</p></div>");      	              
-            });
-
-            $("#" + id).append("</div>");
-                                                                                           
-        } else if(id.indexOf("solution") > 0) {
-            $.each(date, function(key){
-
-                $("#" + id).append("<div class='card'><div class='card-content'>" +
-                                "<span class='card-title'>" + date[key].name + "</span>" +
-                                "<hr /><p class='contents'>" + date[key].contentsSolution + "</p>" +
-                                "<span class='titleDefinition'>Rozwiązanie</span><br/>" +
-                                "<div class='sourceCode'>" + date[key].codeSource +"</div>" + 
-                                "<span class='titleDefinition'>Wynik</span><br/>" +
-                                "<div class='sourceCode center'>"+ date[key].result+"</div>" +	   
-                                "<span class='titleDefinition'>Podsumowanie</span>" +
-                                "<hr /><p class='contents'>" + date[key].conclusion + "</p>" +                                                             
-                                "</div></div>");
-            });                                                                          
-        } else if(id.indexOf("source") > 0) {
-            $("#" + id).append("<div class='card'><div class='card-content'><p class='contents' id='source'>");
-
-            $.each(definition, function(key){                 	
-
-                $("#source").append("<span class='sourceLink'>" + definition[key].name + "<br/>" +
-                                    "<a class='sourceLink' href='" + definition[key].href + "'>" +
-                                    "<span class='definitionCount'>" + definition[key].href + "</span>" + 
-                                    "</a>" +
-                                    "</span><br/>");                
-            });
-
-            $("#" + id).append("</p></div></div>");
-        };                  
-       
-        jqMath.parseMath(document.body);
-     };
+    //Budowanie widoku z buttonó
     
+    $.each(test, function(key, value){
+        $(".testBtnBox").append("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
+        $("#dropdownTest").append("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
+        $(".side-nav").append("<a href='" + test[key].href + "' id='" + test[key].id_link + "'>" + test[key].name + "</a>");
+    });
+
+    //Ikona w ostatnim teście
+    var _id = test[test.length - 1].id_a;
+
+    $("#" + _id).append("<i class='mdi mdi-checkbox-marked-circle-outline right'></i>");
+    //$("#" + _id).addClass("tooltipped").attr("data-position", "bottom").attr("data-delay", "50").attr("data-tooltip", "Najnowszy test");
+    $(".mdi-checkbox-marked-circle-outline").attr("style", "color:yellow");
+
+    //Obsługa linków do section 
+
+    $("#navi").on("click", "#logo-container", function(e){
+        transitionToSection("#index");
+    });
+     $("#naviLarge").on("click", "#linkIndexLarge", function(e){
+        transitionToSection("#index");
+    });
+
+    $(".testBtnBox").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+        transitionToSection(_id);
+    });
+
+    $("#dropdownTest").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+        transitionToSection(_id);
+    });
+
+    $(".side-nav").on("click", "a", function(e){
+        var _id = $(this).attr("href");
+        if (_id.length < 10){
+            transitionToSection(_id);
+        }
+    });
+
+    //Obsługa testów
+    $("main .section").on("click", "li > div", function(e){
+        var _id = $(this).attr("id");
+        //var _test = _id.substring(0, 6);
+
+        loadTest(_id, date, definition);
+    });
 });
 
-    var date =[{
+
+var date =[{
         id: ["1"],
+        test: ["test22"],
         name: ["Zadanie I"],
         contentsTask: ["Zmienna losowa X przyjmuje wartości −4, 5, 10 odpowiednio z prawdopodobieństwami $$1/2, 2/5, 1/10$$. " +
                        "Naszkicuj wykres rozkładu i oblicz wartość oczekiwana i wariancje zmiennej losowej X."],
@@ -93,6 +131,7 @@ $(document).ready(function () {
                 "<img class='responsive-img' src='image/test22/wykres01.png'/>"],
         conclusion: ["Na podstwie wyników oraz wykresu wywnioskować można, że wartością spodziwaną jest 1. Wariancja mówi o tym, iż dane są mocno \"rozrzucone\" względem wartości oczekiwanej."] }, {
         id: ["2"],
+        test: ["test22"],
         name: ["Zadanie II"],
         contentsTask: ["Uczeń rzuca 5 razy piłka do kosza. Prawdopodobieństwo trafienia w jednym rzucie wynosi 0,25. " +
                        "Wyznaczyć rozkład ilości trafień piłka do kosza oraz wartość oczekiwana tej liczby trafień."],
@@ -117,6 +156,7 @@ $(document).ready(function () {
                     "1.25"],
         conclusion: ["Według rozkładu oraz wartości oczekiwanej spodziewać się należy, iż uczeń trafi do kosza 1.25 razy."] }, {
         id: ["3"],
+        test: ["test22"],
         name: ["Zadanie III"],
         contentsTask: ["Rzucamy 300 razy kostka do gry. Za sukces w pojedynczym rzucie uznamy zdarzenia polegajacego na tym, " +
                         "że otrzymano szóstke. Jakie jest prawdopodobieństwo zdarzenia polegajacego na tym, ze liczba sukcesów " +
@@ -137,6 +177,7 @@ $(document).ready(function () {
         conclusion: ["Prawdopodobieństwo wyrzucenia kostka 'szóstki' w 300 rzutach i przy założeniu, że liczba tych sukcesów będzie różniła się od 50 " +
                         "o więcej niż 10 wynosi 0.417."] }, {
         id: ["4"],
+        test: ["test22"],
         name: ["Zadanie IV"],
         contentsTask: ["W urnie znajdują się kule z numerami 1, 2, 3, 4, 5, 6 w stosunku ilościowym odpowiednio " +
                         "3 : 5 : 4 : 2 : 1 : 3. Losujemy jedna kule i zmienna losowa X odpowiada numerowi na kuli. " +
@@ -162,12 +203,33 @@ $(document).ready(function () {
                     "WARIANCJA<br/>" +
                     "2.765"        ],
         conclusion: ["Wartość oczekwiana wynosi 3.111, w puli nie ma kuli o takiej wartości. Defacto możemy spodziewać się kuli o wartości 3. " +
-                        "Możemy to wywnioskować, dzięki wartości wariancji. Mówi on o tym, że dane są skupionej wokół wartości względnej."] }];
+                        "Możemy to wywnioskować, dzięki wartości wariancji. Mówi on o tym, że dane są skupionej wokół wartości względnej."] },{
+        id: ["5"],
+        test: ["test16"],
+        name: ["Zadanie I"],
+        contentsTask: ["Niech $X = (X1, X2 . . . , Xn)$ bedzie próba losowa prosta o rozmiarze $n = 14$ taka, ze $8$ pomiarów $(X1, X2 . . . , X8)$ pochodzi z rozkładu o gestości <p class='center-align'>$$f_1(x) = Θ exp` `{ -Θx `} ` `dla `  x > 0$$</p> i ma postać $(2.55, 3.82, 5.11, 2.24, 3.68, 3.31, 4.63, 1.05)$, a druga cześć próby $(X9, X2 . . . , X14)$ pochodzi z rozkładu o gestości <p class='center-align'>$$f_2(x) = 2/6Θ x exp` `{ -Θ/6x^2 `} ` `dla `  x > 0$$</p>i ma postać $(7.788, 3.627, 7.063, 0.946, 10.113, 8.628)$. Znależć estymator najwiekszej wiarygodności dla parametru $Θ$."],
+        contentsSolution: ["Obliczenie estymatora największej wiarygodności dla parametry $Θ$ rozpocznięmy od wyznaczenia tejże funkcji, następnie wyznaczony zostanie logarytm naturalny tej funkcji. Jednym z końcowych etapów szacowania będzie wyznacznie pochodnej logarytmu, co pozwolie wyznaczyć esymator największej wiarygodności dla parametru $Θ$.<p class='solutionItem'>Funkcja Wiarygodności</p><p class='leftEquation'>$$`table L(x_1, ...,x_14;Θ) =; f_1(x_1;Θ)•...•f_1(x_8;Θ)•f_2(x_9;Θ)•...•f_2(x_14;Θ) =;Θe^{-Θx_1}•...•Θe^{-Θx_8}•2/6Θx_9e^{-Θ/6{x_9}^2}•...•2/6Θx_14e^{-Θ/6{x_14}^2} =;{Θ^14(2/6)^6(x_9•...•x_14)e}^{-Θ(x_1+...+x_8+1/6({x_9}^2+...+{x_14}^2))}$$</p><p class='solutionItem'>Logarytm Naturalny</p><p class='leftEquation'>$$`table ln` L(x_1, ...,x_14;Θ) =;ln({Θ^14(2/6)^6(x_9•...•x_14)e}^{-Θ(x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2))}) =; ln` Θ^14 +ln((2/6)^6(x_9•...•x_14))+ln` e^{-Θ(x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2))} =;ln` Θ^14 + ln((2/6)^6(x_9•...•x_14)) - Θ(x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2))$$</p><p class='solutionItem'>Pochodna Logarytmu Naturalnego</p><p class='leftEquation'>$$h'(Θ)= 14/Θ +0 -(x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2))$$</p><p class='solutionItem'>Miejsce zerowe pochodnej logarytm naturalnego parametru $Θ$</p><p class='leftEquation'>$$`table h'(0) = 0;h'(Θ)= 14/Θ +0 -(x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2));14/Θ +0 - (x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2)) = 0;$$</p><p class='solutionItem'>Esymator największej wiarygodności $Θ$</p><p class='leftEquation'>$$Θ = 14/{x_1+...+x_7+1/6({x_9}^2+...+{x_14}^2)}$$</p>Pozostałe obliczenia zostaną już wykonane w środowisku R. Dzięki wyprowadzonemu wzorowi obliczenia nie będą ciężkie."],
+        codeSource: ["> X1 <- c(2.55 3.82 5.11 2.24 3.68 3.31 4.63 1.05)<br/>" +
+                        "> X2 <- c(7.788  3.627  7.063  0.946 10.113  8.628)<br/>" +
+                        "> teta <- 14/(sum(X1) + (sum(X2^2)/6))"],
+        result: ["$Θ$ wynosi: <p class='centerEquation'>0.1827501</p>"],
+        conclusion: ["Estymator największej wiarygodności parametru $Θ$ wynosi: <p class='centerEquation'>0.1827501</p>"] }, {
+        id: ["6"],
+        test: ["test16"],
+        name: ["Zadanie II"],
+        contentsTask: ["Niech $X = (X1, X2 . . . , Xn)$ bedzie próba losowa prosta o rozmiarze $n = 18$ taka, ze $10$ pomiarów $(X1, X2 . . . , X10)$ pochodzi z rozkładu jednostajnego na przedziale $$(0, Θ)$$ i ma postać <p class='center-align'>$$(2.820, 2.938, 1.657, 7.262, 3.246, 7.661, 5.529, 0.575, 6.121, 1.993)$$</p> A druga cześć próby $(X11, X2 . . . , X18)$ pochodzi z rozkładu jednostajnego na przedziale $(0, 2Θ)$ i ma postać <p class='center-align'>$(1.21, 11.83, 9.31, 12.50, 9.25, 10.69, 1.73, 4.63)$</p> Znależć estymator najwiekszej wiarygodności dla parametru."],
+        contentsSolution: ["Do oszacowania estymatora największej wiarygodności w tym zadaniu należy wyznaczyć najwyższą wartość $Θ$, tegoż parametru.Nalęzy przy tym przyjąć poniższe założenia: <p class='centerEquation'>$$x_1, ..., x_10 ∈(0, Θ)$$</p><p class='centerEquation'>$$x_11, ..., x_18 ∈(0, 2Θ)$$</p> Aby to obliczyć prosto i przyjemnie wykorzystamy środowisko R."],
+        codeSource: ["> X1 <- c(2.820,2.938,1.657,7.262,3.246,7.661,5.529,0.575,6.121,1.993)<br/>" +
+                        "> X2 <- c(1.21,11.83,9.31,12.50,9.25,10.69,1.73,4.63)<br/>" +
+                        "> mX1 <- max(X1)<br/>" +
+                        "> mX2 <- max(X2)<br/>" +
+                        "> theta <- max(max(mX1),max(mX2))"],
+        result: ["Maksimum z pierwszego rozkładu:<p>7.661</p>Maksimum z drugiego rozkładu:<p>12.5</p>Esymator największej wiarygodności parametru $Θ$ wynosi:<p>12.5</p>"],
+        conclusion: ["Estymatorem największej wiarygodności parametru $Θ$ okazało się maksimum drugiego rozkładu i wynosi:<p>12.5</p> Jest to 14 parametr próby."]}];
 
-   
-    
-    var definition = [{
+var definition = [{
             id: [1],
+            test: ["test22"],
             name: ["Zmienna losowa"],
             href: ["http://prac.im.pwr.edu.pl/~agniesz/rachunek_prawd_MAEW104/wyklady/R_Pr_MAEW104_wyklad7_zmienna_los_dystrybuanta.pdf"],
             contents: ["Zmienna losowa to funkcja $$X: Ω→R$$, dla której dla dowolnego borelowskiego zbioru $$B ⊂ R$$ zbiór:<br/>" +
@@ -176,6 +238,7 @@ $(document).ready(function () {
                         "dla której określone są prawdopodobieństwa przyjmowania przez $$X$$ wartości z każdego dowolnego zakresu. " +  
                         "W rachunku prawdopodobieństwa interesuje nas rozkład zmiennej losowej, ewentualnie jej charakterystyki liczbowe. "] }, {
             id: [2],
+            test: ["test22"],
             name: ["Wariancja"],
             href: ["http://www.naukowiec.org/wiedza/statystyka/wariancja_719.html"],
             contents: ["Wariancja jest podstawową miarą zmienności obserwowanych wyników." + 
@@ -192,6 +255,7 @@ $(document).ready(function () {
                         "a nie o jednym przypadku. Wariancje obliczamy z następującego wzoru:<br/>" +
                         "<span class='centerEquation math'>$$σ^2 = E(X-m)^2 = ∑_(i=1)^n(x_i-E)^2  p_i$$</span>"]}, {
             id: [3],
+            test: ["test22"],
             name: ["Wartość oczekiwana"],
             href: ["http://www.statystyka-zadania.pl/wartosc-oczekiwana/"],
             contents: ["Wartość oczekiwana( wartość średnia, wartość przeciętna ) jest wartością spodziewaną w doświadczeniu losowym, " + 
@@ -209,6 +273,7 @@ $(document).ready(function () {
                             "<li>$$•\ \ $$rozkład mieszany</li><br/>" +
                         "<span class='centerEquation math'>$$EX=  ∫_Ω x*f(x)dx + ∑_(i=1)^n x_i *P(X= x_i )$$</span></ul>"] }, {
             id: [4],
+            test: ["test22"],
             name: ["Prawdopodobieństwo"],
             href: ["http://www.naukowiec.org/wiedza/matematyka/prawdopodobienstwo_834.html"],
             contents: ["Prawdopodobieństwo jest funkcją P określoną na rodzinie zdarzeń o wartościach w zbiorze liczb rzeczywistych, " +
@@ -235,6 +300,7 @@ $(document).ready(function () {
                                 "proporcji lub kształtu doświadczenia losowego, bywa też i tak, że wartość wylicza się na podstawie " + 
                                 "wyników otrzymanych z bardzo dużej ilości powtórzonych doświadczeń losowych.</p></ul>"] }, {
             id: [5],
+            test: ["test22"],
             name: ["Nierówność Czebyszewa"],
             href: ["http://encyklopedia.naukowy.pl/Nierówność_Czebyszewa"],
             contents: ["Nierówność Czebyszewa podaje górne ograniczenie prawdopodobieństwa zdarzenia, " +
@@ -245,6 +311,7 @@ $(document).ready(function () {
             "Dla każdej zmiennej losowej $$X$$ spełniającej warunek $$P{X<0}=0$$ o wartości oczekiwanej $$E(X)$$ dla każdego $$ε > 0$$ zachodzi: <br/>" +
             "<span class='centerEquation math'>$$P\ \{ X ≥ ε\} ≤ {E(X)}/ε$$</span>"] }, {
             id: [6],
+            test: ["test22"],
             name: ["Nierówność Czebyszewa-Bienaymé"],
             href: ["http://encyklopedia.naukowy.pl/Nier%C3%B3wno%C5%9B%C4%87_Czebyszewa-Bienayme"],
             contents: ["Nierówność Czebyszewa-Bienaymé podaje górne ograniczenie prawdopodobieństwa zdarzenia, że wartość zmiennej " +
@@ -256,6 +323,7 @@ $(document).ready(function () {
                         "$σ^2 = E(X - E(X))^2$ i dla każdego $ε > 0$ zachodzi:<br/>" +
                         "<span class='centerEquation math'>$$P(|X - E(X)| ≥ ε) ≤ {E(X)}/ε^2$$</span>"] }, {
             id: [7],
+            test: ["test22"],
             name: ["Rozkład dwumianowy"],
             href: ["http://www.statystycy.pl/p16814_rozklad_dwumianowy_bernoulliego.php"],
             contents: ["Jest to jeden z podstawowych rozkładów dyskretnych w statystyce. Opisuje on  sukcesów w  próbach. Najważniejsze cechy tego rozkładu to:<br/>" + 
@@ -272,5 +340,30 @@ $(document).ready(function () {
                         "<ul class='defineList'><li>$$•\ \ $$ Wartość oczekiana </li><br/>" +
                         "<span class='centerEquation math'>$$E(X) = np$$</span>" +
                         "<li>$$•\ \ $$ Wariancja</li><br/>" + 
-                        "<span class='centerEquation math'>$$E(X) = npq$$</span></ul>"] }];
-});
+                        "<span class='centerEquation math'>$$E(X) = npq$$</span></ul>"] }, {
+
+            id: [8],
+            test: ["test16"],
+            name: ["Prosta próba losowa"],
+            href: ["http://www.statystyka-zadania.pl/proba-prosta/"],
+            contents: ["Próbą prostą nazywamy podzbiór danych wybrany z populacji. Każda wartość w podzbiorze jest wybrana w sposób niezależny i losowy, tzn. że nie ważne czy losujemy wartość o numerze 1 czy numerze 100 szansa na to że będzie to wartość M wynosi tyle samo."]}, {
+            id: [9],
+            test: ["test16"],
+            name: ["Rozkład jednostajny"],
+            href: ["http://www.docsity.com/pl/e16e715b81a1f13489f192a28c8f51d1/273843/"],
+            contents: ["Zmienna losowa ma rozkłąd jednostajny, jeżeli jej gęstość prawdopodobieństwa jest określona wzorem: <p class='centerEquation'>$$f(x) = `{ `table 0, `dla x &lt; a` `i` x> b, (a&lt;b); ` 1/{b-a}, `dla ` a &lt;x&lt;b $$</p>"]}, {
+            id: [10],
+            test: ["test16"],
+            name: ["Estymacja statystyczna"],
+            href: ["http://wl.sggw.pl/Members/misioo/statystyka1st_estymacja.pdf"],
+            contents: ["Estymacja statystyczna jest rodzajem wnioskowania o wartościach parametrów populacji generalnej na podstawie statystyk określonych z n-elementowych prób losowych.Statystyka, na podstawie której szacujemy parametr populacji $Θ$ nazywamy estymatorem Tn parametru $Θ$.Dobry estymator to taki, który daje możliwie najlepsze oszacowanie  parametru populacji. Cechy dobrego estymatora:<ul class='defineList'><li>$$•\ \ $$ Nieobciążoność</><span class='centerEquation'>$$ETn = Θ$$</span><li>$$•\ \ $$ Zgodność</li>  <span class='centerEquation'>$${lim}↙{n→∞} P[|Tn - Θ| &lt;ε] = 1$$ &nbsp; $${lim}↙{n→∞} ETn → Θ$$</span>   <li>$$•\ \ $$ Efektywność</li><span class='centerEquation'>Estymator efektywny to taki, który ma najmniejszą zmienność.</span></ul>"]},{
+            id: [11],
+            test: ["test16"],
+            name: ["Funkcja gęstości"],
+            href: ["http://home.agh.edu.pl/~adan/wyklady/rpis3.pdf"],
+            contents: ["Funkcją gęstości prawdopodobieństwa zmiennej losowej typu ciągłego nazywamy funkcję <span class='math'>$$f(x)$$</span>, określoną na zbiorze liczb rzeczywistych, taką że: <span class='math'>$$f(x)≥0 ⋀ a ≥ b$$</span> zachodzi: <span class='centerEquation math'>$$∫_a^b f(x)dx=P(a&lt;X&lt;b)$$</span><br/> Własności funkcji gęstości prawdopodobieństw:<br/><ul class='defineList'><li>$$•\ \ $$Funkcja gęstości jest nieujemna, <span class='math'>$$f ≥0$$</span></li><li>$$•\ \ $$W punktach, w których f jest ciągła zachodzi równość: <span class='math'>$$f(x)= F^' (x)$$</span>, funkcja gęstości jest pochodną dystrybuanty</li><li>$$•\ \ $$Każda funkcja <span class='math'>$$f$$</span>, będąca gęstością prawdopodobieństwa, wyznacza jednoznacznie pewną dystrybuantę, a tym samym rozkład prawdopodobieństwa pewnej zmiennej.</li></ul>"]},{
+            id: [12],
+            test: ["test16"],
+            name: ["Funkcja wiarygodności"],
+            href: ["https://www.google.pl/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=0ahUKEwjcsr_f7cTRAhVmJ5oKHULhAJ4QFghPMAg&url=http%3A%2F%2Fwww.ifd.uni.wroc.pl%2F~andab%2Fstatwyk5.doc&usg=AFQjCNHsH-7dagF_umog-0GnPpupJuVobg"],
+            contents: ["Funkcja wiarygodności ma charakter funkcji łącznego rozkładu prawdopodobieństwa, a posteriori dla próby  $X1,...,Xn$  przy założeniu niezależności poszczególnych pomiarów i jest dana wzorem: <p class='centerEquation'>$$L(x_1,...,x_n; Θ_1,...,Θ_k)=f(x_1; Θ_1,..., Θ_k)f(x_2; Θ_1,..., Θ_k)...f(x_3; Θ_1,..., Θ_k)$$</p> Metoda polega na przeświadczeniu, że zdarzenia o większym prawdopodobieństwie zachodzą częściej niż zdarzenia mniej prawdopodobne. Zakłada się, że uzyskana w losowaniu próba jest realizacją zdarzenia o największym prawdopodobieństwie, co jest równoważne warunkowi osiągnięcia maksimum przez funkcję wiarygodności. Jako estymatory nieznanych parametrów $Θ_1,...,Θ_k$ przyjmuje się takie $Θ↖{`^}_1,...,Θ↖{`^}_k$, dla których funkcja wiarygodności osiąga maksimum. Funkcja $ln L$ osiąga maksimum dla tych samych wartości parametrów co funkcja $L$, a łatwiej ją różniczkować. Poszukiwane jest więc maksimum logarytmicznej funkcji wiarygodności <p class='centerEquation'>$$l = ln` L =∑↖{n}↙{i = 1} ln ` f(x_1; Θ_1,..., Θ_k)$$</p>Warunek na maksimum funkcji $l$ przyjmuje postać układu równań:<p class='centerEquation'></p> Poza tym potrzeba i wystarcza, aby forma kwadratowa <p class='centerEquation'>$$∑↖{k}↙{i = 1}∑↖{k}↙{j = 1}({∂^2` l}/{∂Θ_i∂Θ_j})_{`table{Θ_i = Θ↖{`^}_i};{Θ_j = Θ↖{`^}_j}}` h_ih_j$$</p> była określona ujemnie. $h_i$ i $h_j$ są zmiennymi rzeczywistymi nie zerującymi się jednocześnie."]}]; 

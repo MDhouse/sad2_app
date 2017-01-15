@@ -110,6 +110,12 @@ ul > a {
     margin: 2% 0 0 0;
 }
 
+.leftEquation {
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+}
+
 .leftContent {
     padding: 2em;
 }
@@ -119,8 +125,6 @@ ul > a {
 }
 
 .contents {
-    font-size: 15px;
-    font-weight: 300;
 }
 
 .sourceCode {
@@ -175,6 +179,12 @@ td, th {
 .titleDefinition {
     font-size: 15px;
     font-weight: 500;
+}
+
+.solutionItem {
+    margin-left: 3%;
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 /*----------------------BTN classes----------------------*/
