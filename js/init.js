@@ -54,7 +54,7 @@ $(document).ready( function(){
             return false;
     });
 
-    //Budowanie widoku z buttonó
+    //Budowanie widoku z buttonów
     
     $.each(test, function(key, value){
         $(".testBtnBox").append("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
@@ -98,7 +98,6 @@ $(document).ready( function(){
     //Obsługa testów
     $("main .section").on("click", "li > div", function(e){
         var _id = $(this).attr("id");
-        //var _test = _id.substring(0, 6);
 
         loadTest(_id, date, definition);
     });
@@ -230,58 +229,102 @@ var date =[{
         test: ["test19"],
         name: ["Zadanie I"],
         contentsTask: ["Obliczyć wartość oczekiwaną zmiennej losowej o gęstości $$fx(·)$$"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Wykonanie zadania i przedstawienie wyniku jest dość trywialne. Oblicznie wartości oczekiwanej zmiennej losowej wykorzystując środowisko R wykonujemy przy pomocy funkcji $$integrate$$."],
+        codeSource:["> c <- 1/27388.75<br/>"+
+                    "> f1 <- function(x){ c *(x^3 + 18*x^2 + 108*x + 225)}<br/>"+
+                    "> fm1 <- function(x){ x *f1(x)}<br/>"+
+                    "> m1 <- integrate(fm1, 9, 14)$value<br/>"+
+                    "> m1<br/>"],
+        result: ["$$11.85085$$"],
+        conclusion: ["Wartość oczekiana zmiennej losowej wynosi: $11.85085$."]}, {
         id: [8],
         test: ["test19"],
         name: ["Zadanie II"],
         contentsTask: ["Naszkicować wykres gęstości zmiennej losowej $$X$$"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Przedstawienie na wykresie gęstości zmiennej losowej nie jest problemem, a w środowisku R jest to dość proste."],
+        codeSource:["> png('wykres01.png', width = 640, height = 480)<br/>" +
+                    "> curve(f1, xlim=c(9,14), col.lab='red')<br/>" +
+                    "> title(main='Gęstość Zmiennej losowej')<br/>" +
+                    "> dev.off()"],
+        result: ["<img class='responsive-img' src='image/wykres01.png'/>"],                   
+        conclusion: ["Wykres powyżej przedstawia gęstość zmienną losową."]}, {
         id: [9],
         test: ["test19"],
         name: ["Zadanie III"],
         contentsTask: ["Obliczyć wariancję zmiennej losowej o gęstości $$fx(·)$$"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Wykonanie zadania i przedstawienie wyniku jest dość trywialne. Oblicznie wariancji zmiennej losowej wykorzystując środowisko R wykonujemy przy pomocy funkcji $$integrate$$."],
+        codeSource:["> c <- 1/27388.75<br/>"+
+                    "> f1 <- function(x){ c *(x^3 + 18*x^2 + 108*x + 225)}<br/>"+
+                    "> fm1 <- function(x){ x *f1(x)}<br/>"+
+                    "> m1 <- integrate(fm1, 9, 14)$value<br/>"+
+                    "> fm2 <- function(x){x^2 * f1(x)}<br/>"+
+                    "> EX <- m1<br/>"+
+                    "> m2 <- integrate(fm2, 3, 14)$value<br/>"+
+                    "> EX2 <- m2<br/>"+
+                    "> EX2 - EX^2<br/>"],
+        result: ["$$21.26287$$"],
+        conclusion: ["Wariancja zmiennej losowej wynosi: $21.26287$."]}, {
         id: [10],
         test: ["test19"],
         name: ["Zadanie IV"],
         contentsTask: ["Naszkicować wykres dystrybuanty zmiennej losowej $$X$$"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Przedstawienie na wykresie dystrybuanty zmiennej losowej nie jest problemem, a w środowisku R jest to dość proste.<br/> Wartość dystrybuanta została obliczona na podstawie funkcji:<br/> <span class='centerEquation'>$$fx(x) =  c(x^4/4 + 6x^3 + 54x^2 + 225x - 12413.25)$$</span>"],
+        codeSource:["> png('wykres02.png', width = 640, height = 480)<br/>" +
+                    "> curve(f2, xlim=c(9,14), col.lab='red')<br/>" +
+                    "> title(main='Dystrybuanta Zmiennej losowej')<br/>" +
+                    "> dev.off()"],
+        result: ["<img class='responsive-img' src='image/wykres02.png'/>"],
+        conclusion: ["Wykres powyżej przedstawia dystrybuantę zmienną losową."]}, {
         id: [11],
         test: ["test19"],
         name: ["Zadanie V"],
         contentsTask: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (11.48, 11.96))$$</span>"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Przedstawienie na wykresie gęstości zmiennej losowej $$X$$ z prawdopodobieństwem $$Pr(X ∈ (11.48, 11.96))$$ nie jest problemem, a w środowisku R jest to dość proste."],
+        codeSource:["> png('wykres03.png', width = 640, height = 480)<br/>" +
+                    "> curve(f1, xlim=c(9,14), col.lab='red')<br/>" +
+                    "> x <- c(11.48, seq(11.48, 11.96, 0.01), 11.96)<br/>" +
+                    "> y <- c(0, f1(seq(11.48, 11.96, 0.01)), 0)<br/>" +
+                    "> title(main='Gęstość Zmiennej losowej z prawdopodobieństwem')<br/>" +
+                    "> polygon(x, y, col='red')<br/>" +
+                    "> dev.off()"],
+        result: ["<img class='responsive-img' src='image/wykres03.png'/>"],
+        conclusion: ["Wykres powyżej przedstawia gęstość zmiennej losowej z prawdopodobieństwem $$Pr(X ∈ (11.48, 11.96))$$."]}, {
         id: [12],
         test: ["test19"],
         name: ["Zadanie VI"],
         contentsTask: ["Zaznaczyć na wykresie gęstości zmiennej losowej $$X$$ prawdopodobieństwo <br/><span class='centerEquation math'>$$Pr(X ∈ (10.45, 12.73))$$</span>"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Przedstawienie na wykresie dystrybuanty zmiennej losowej $$X$$ z prawdopodobieństwem $$Pr(X ∈ (10.45, 12.73))$$ nie jest problemem, a w środowisku R jest to dość proste."],
+        codeSource:["> png('wykres04.png', width = 640, height = 480)<br/>" +
+                    "> curve(f2, xlim=c(9,14), col.lab='red')<br/>" +
+                    "> title(main='Dystrybuanta zmiennej losowej z prawdopodobieństwem')<br/>" +
+                    "> lines(c(10.45,10.45),c(f2(10.45), f2(12.73)), col='red')<br/>" +
+                    "> dev.off()"],
+        result: ["<img class='responsive-img' src='image/wykres04.png'/>"],
+        conclusion: ["Wykres powyżej przedstawia dystrybuantę zmiennej losowej z prawdopodobieństwem $$Pr(X ∈ (10.45, 12.73))$$."]}, {
         id: [13],
         test: ["test19"],
         name: ["Zadanie VII"],
         contentsTask: ["Znaleźć gęstość zmiennej losowej $Y = √^3X$"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}, {
+        contentsSolution: ["Gęstość zmiennej losowej $$Y$$ należy obliczyć na podstawie dystrybuanty zmieennej losowej $$X$$. Poniżej znajdują się oblicznia oraz ich wynik. Obliczenia są typowo matematyczne i nie zostały wykoanne przy pomocy R."],
+        codeSource:["$$f(x) =  c(x^4/4 + 6x^3 + 54x^2 + 225x - 12413.25)$$<br/>" +
+                    "$$f(y^3) =  c((y^3)^4/4 + 6(y^3)^3 + 54(y^3)^2 + 225(y^3) - 12413.25)$$<br/>" +
+                    "$$f(y^3) =  c(y^12/4 + 6y^9 + 54y^6 + 225y^3 - 12413.25)$$<br/>" +
+                    "$$f(y^3) =  c(3y^11 + 54y^8 + 324y^5 + 675y^2)$$<br/>"],
+        result: ["$$fy(Y) = 3y^11 + 54y^8 + 324y^5 + 675y^2$$"],
+        conclusion: ["Według wykonanych działań matematycznych do obliczenia gęstości losowej nalezy użyć funkcji: $$3y^11 + 54y^8 + 324y^5 + 675y^2$$"]}, {
         id: [14],
         test: ["test19"],
         name: ["Zadanie VIII"],
         contentsTask: ["Obliczyć $$EY$$ i sprawdzić, czy $$(EY)^3 > EX$$ (nierówność Jensena)"],
-        contentsSolution: [],
-        codeSource:[],
-        conclusion: []}];
+        contentsSolution: ["Wykonanie zadania i przedstawienie wyniku jest dość trywialne. Sprawdzenie czy $$EY$$ jest nierównością Jensena wykorzystując środowisko R wykonujemy przy pomocy funkcji $$integrate$$." ],
+        codeSource:["> fy <- function(y) { c*(3*y^11 + 54*y^8 +234*y^5 + 675*y^2)}<br/>" +
+                    "> y1 <- 9^(1/3)<br/>" +
+                    "> y2 <- 14^(1/3)<br/>" +
+                    "> EY <- integrate(function(y){y*fy(y)}, y1,y2)$value<br/>" +
+                    "> EY^3<br/>" +
+                    "> EY^3 > EX"],
+        result: ["9.711832<br/> FALSE"],
+        conclusion: ["$EY$ wynosi: $9.711832$. A badanie nierówności Jensena dało wynik FALSE."]}];
 
 var definition = [{
             id: [1],
