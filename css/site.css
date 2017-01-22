@@ -104,10 +104,20 @@ ul > a {
     padding: 0 1.0%;
 }
 
+.centerEquationBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .centerEquationBox span {
+        text-transform: none;
+    }
+
 .centerEquation {
     display: flex;
     justify-content: center;
     margin: 2% 0 0 0;
+    text-transform: none;
 }
 
 .leftEquation {
@@ -120,12 +130,34 @@ ul > a {
     padding: 2em;
 }
 
+.hipotez {
+    font-style: italic;
+}
+
 .titleTask{
     padding: 0 0 3% 0;
 }
 
-.contents {
+table {
+    padding: 3% 0;
 }
+
+table.highlight > tbody > tr:hover {
+  color: black;
+}
+
+table tbody td {
+    border-left: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+}
+
+table thead {
+    border-top: 2px solid #d0d0d0;
+    border-bottom: 2px solid #d0d0d0;
+}
+
+
+/*style="display: flex; justify-content: center;"*/
 
 .sourceCode {
     background-color: white;
@@ -203,6 +235,14 @@ td, th {
 
 /*----------------------MEDIA configuraction----------------------*/
 
+@media only screen and (max-width: 1280px) {
+    
+    table.responsive-table{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media only screen and (max-width : 992px) {
     .mail {
         display: none;
@@ -248,8 +288,16 @@ td, th {
     }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1281px) {
     .sourceCode {
         width: 70%;
+    }
+
+    table td:first-child {
+        border-left: none;
+    }
+
+    table td:last-child {
+        border-right: none;
     }
 }

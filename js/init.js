@@ -24,6 +24,12 @@
         id_a: ["test16Box"],
         id_drop: ["dropTest16"],
         id_link: ["linkTest16"],
+    },{
+        name: ["test 09"],
+        href: ["#test09"],
+        id_a: ["test09Box"],
+        id_drop: ["dropTest09"],
+        id_link: ["linkTest09"],
     }];
 
 $(document).ready( function(){
@@ -54,8 +60,7 @@ $(document).ready( function(){
             return false;
     });
 
-    //Budowanie widoku z buttonów
-    
+    //Budowanie widoku z buttonów    
     $.each(test, function(key, value){
         $(".testBtnBox").append("<a id='"+ test[key].id_a +"' href='" + test[key].href + "' class='waves-effect waves-light btn-large'>" + test[key].name + "</a>");
         $("#dropdownTest").append("<li class='testLink'><a href='" + test[key].href  + "' id='" + test[key].id_drop + "'>" + test[key].name + "</a></li>");
@@ -98,7 +103,6 @@ $(document).ready( function(){
     //Obsługa testów
     $("main .section").on("click", "li > div", function(e){
         var _id = $(this).attr("id");
-
         loadTest(_id, date, definition);
     });
 });
@@ -324,7 +328,16 @@ var date =[{
                     "> EY^3<br/>" +
                     "> EY^3 > EX"],
         result: ["9.711832<br/> FALSE"],
-        conclusion: ["$EY$ wynosi: $9.711832$. A badanie nierówności Jensena dało wynik FALSE."]}];
+        conclusion: ["$EY$ wynosi: $9.711832$. A badanie nierówności Jensena dało wynik FALSE."]}, {
+        id: [15],
+        test: ["test09"],
+        name: ["Zadanie"],
+        contentsTask: ["W wyniku analizy strukrury demograficznej, gospodarczej i społecznej wybranej pewnej grupy gmin w Polsce ustalono, ze w grupie tej poziom wydatków inwestycyjnych na jednego mieszkanca gminy powinien przekroczyc 459.7 PLN. Zbadano wyniki wydatków inwestycyjnych w 20 gminach i otrzymano następujące wyniki:<br/><table class='responsive-table highlight'><thead><tr><td></td><td>A</td><td>B</td><td>C</td><td>D</td><td>F</td></tr></thead><tbody><tr><td>Dane 1 - 5</td><td>461.93</td><td>458.77</td><td>460.06</td><td>461.88</td><td>462.66</td></tr><tr><td>Dane 6 - 10</td><td>459.65</td><td>459.06</td>     <td>461.52</td><td>461.45</td><td>460.41</td></tr><tr><td>Dane 11 - 15</td><td>458.54</td><td>460.21</td><td>459.07</td><td>459.96</td>          <td>458.94</td></tr><tr><td>Dane 16- 20</td><td>459.78</td><td>459.75</td><td>458.20</td><td>459.91</td><td>458.69</td></tr></table> Chcemy odpowiedzieć na pytanie: Czy poziom wydatków inwestycyjnych satystycznie istotnie wzrósł? Skonstruowac odpowiednia hipoteze i jej alternatywe, a nastepnie zweryfikować hipoteze zerową i odpowiedzieć na postawione pytanie badawcze.<br/><br/>Potrzebne wzory:<div class='centerEquationBox'><span>$x↖{-} = 1/n` ∑↖{n}↙{i = 1}` x_i$</span><span>$s^2 = 1/{n -1}` ∑↖{n}↙{i = 1}` (x_i - x↖{-})^2$</span><span>$t_{n-1} = {x↖{-} - μ_0}/s √{n}$</span></div>"],
+        contentsSolution: ["Istotą badań jest poziom wydatków inwestycyjnych przypadający na jednego mieszkańca,  w jednej z 20 gmin. Anliza struktury demograficznej, gospodarczej i społecznej pozwoliła wusunąć wniosek, taki iż poziom wydatków nie powinien przekroczyć 459.70 złotych na jednego mieszkańca. Poniżej przeprowadzaone zostanei badanie potwierdzające lub obalające powyższy wniosek. Prawidłowy przebieg badań możliwy będzie po postawieńu hipotezy zerowej i alternatywnej. A o to one: <ul class='defineList'><li>$$•` $$ Hipoteza zerowa</li><p class='hipotez'>„Poziom wydatków inwestycyjnych na jednego mieszkańca gminy nie przekroczył 459.70 zł.”</p><span class='centerEquation'>$H_0: μ_0 ≤ 459.7$</span><li>$$•` $$ Hipoteza alternatywna</li><p class='hipotez'>„Poziom wydatków inwestycyjnych na jednego mieszkańca gminy przekroczył 459.70 zł.”</p><span class='centerEquation'>$H_1: μ_1 > 459.7$</span></ul><p></p>Kolejnym krokiem w przebiegu badań jest przeprowadzenie testów. A oto działania jakie na ten krok się składają:<ul class='defineList'><li>$$•` $$ Średnia arytmtyczna</li><span class='centerEquation'>$x↖{-} = 1/n` ∑↖{n}↙{i = 1}` x_i$</span><li>$$•` $$ Esymator nieobciążony wariancji</li><span class='centerEquation'>$s^2 = 1/{n -1}` ∑↖{n}↙{i = 1}` (x_i - x↖{-})^2$</span><li>$$•` $$ Test t studenta</li><span class='centerEquation'>$t_{n-1} = {x↖{-} - μ_0}/s √{n}$</span></ul>Obliczenia dla tych działań zostaną wykonane w środowisku R i będą widoczne w dolnej części strony.<br/> Aby dopełnić nasze badanie należy ustalić poziom istotności, zazwyczaj jest to 5%. Zbiór danych wynosi 20, a co za tym idzie stopień swobody wynosi 19. Posiadając takie dane możemy odczytać wartość krytyczną z tablicy statystycznej. <span style='text-transform: none;'>$α$</span> dla badanego zbioru i takiej istotności wynosi $1.729$. Ta wartości pozwala nam wyznaczyć obszar krytyczny, a wynosi on $(1.729; + ∞)$"],
+        codeSource:["> x <- c(461.93, 458.77, 460.06, 461.88, 462.66, 459.65, 459.06, 461.52, 461.45, 460.41, 458.54, 460.21, 459.07, 459.96, 458.94, 459.78, 459.75, 458.20, 459.91, 458.69)<br/>> mean <- mean(x)<br/>> var <- var(x)<br/>> t.test(x, y = null, alternative = c(\"greater\"), 459.7, paired = false, var.equal = true, conf.level = 0.95 )"],
+        result: ["Średnia arytmetyczna<br/>$460.02$<br/>Estymator obciążony wariancji<br/>$1.614196$<br/>Test t studenta<br/>data:  x<br/>$t = 1.1334$, $df = 19$, $p-value = 0.1356$<br/>alternative hypothesis: true mean is greater than $459.7$<br/>95 percent confidence interval: 459.5308<br/>Inf sample estimates: mean of x $460.02$"],
+        conclusion: ["Wyniki badań infrmują o tym, iż hipoteza $H_0$ jest nieprawdziwa. Jedną z przesłanem skłaniającom nas do tego wniosku jest wartość t, wynosi ona $1.1334$ i ta wartość nie „mieści się” w obszarze krytycznym. Przyjęta zostałą hipoteza alternatywna mówiąca o tym, iż poziom wydatków statystycznie wzrósł ponad poziom 459.70 zł. Na poziomie ufności wynoszącym 95% stwierdzić można, że rzeczywisty poziom wydatków inwestycyjnych znajduje się w przedziale $459.53 ÷ +∞$. Średni wydatek dla próby wynosi $460.02$ zł " ]
+        }];
 
 var definition = [{
             id: [1],
@@ -547,9 +560,34 @@ var definition = [{
             contents: ["Nierówność Jensena. Jeżeli <span class='math'>$$f$$</span>  jest funkcją wypukłą w pewnym przedziale, to dla dowolnych " +
                         "liczb <span class='math'>$$x_1, x_2, ..., x_n, (x ≥ 2)$$</span>  z tego przedziału oraz liczb nieujemnych " +
                         "<span class='math'>$$α_1, α_2, ..., α_n$$</span> takich, że <span class='math'>$$α_1 + α_2 + ... + α_n = 1$$</span> zachodzi nierówność:<br/>" +
-                        "<span class='centerEquation math'>$$f(∑↙{i = 1}↖{n} α_i \ \ f_i) ≤ ∑↙{i = 1}↖{n} α_i \ \ f(x_i)$$</span>" ]}
-            
-            
-            
-            
-            ]; 
+                        "<span class='centerEquation math'>$$f(∑↙{i = 1}↖{n} α_i \ \ f_i) ≤ ∑↙{i = 1}↖{n} α_i \ \ f(x_i)$$</span>" ]}, {
+            id: [19],
+            test: ["test09"],
+            name: ["Hipoteza"],
+            href: ["http://www.naukowiec.org/wiedza/metodologia/hipoteza_642.html"],
+            contents: ["Hipotezą możemy nazwać przypuszczenie dotyczące pewnych prawidłowości w świecie. Każdy z nas bardzo często stawia hipotezy. Ale hipotezy to tylko przypuszczenia. W   momencie, gdy zdobywamy dowód dla naszych przypuszczeń hipoteza staje się prawdą. W statystyce takimi dowodami są wyniki testów statystycznych, które wykonuje się, aby zweryfikować prawdziwość postawionych hipotez. Często jednak, od tego jak postawimy hipotezę, zależy to czy będziemy mogli uzyskać na nią odpowiedź. Zdarza się, że stawiane są hipotezy, które zawierają fragmenty wykluczające się, albo też są zbyt rozbudowane. Hipotezy stawiane są na podstawie przesłanek teoretycznych. Hipotezy można podzielić na: zerowe i badawcze; na: kierunkowe i niekierunkowe. <br/> Podział hipotez na: zerową i badawczą jest rozróżnieniem teoretycznym lub też metodologicznym. Otóż hipoteza zerowa informuje o tym co już wiadomo. Natomiast hipoteza badawcza stawiana jest, by sprawdzić nową teorię. Można to rozumieć w dwojaki sposób. Hipoteza zerowa to reguła, który obowiązuje do czasu, gdy badania pokażą, że jest inaczej. Najczęściej stosuje się tą drugą formę, w szczególności w badaniach akademickich. Hipoteza zerowa świadczy o braku zależności, a hipoteza badawcza zakłada istnienie zależności. <br/>Hipoteza kierunkowa zakłada jakiś kierunek zależności. Hipoteza niekierunkowa ma formę eksploracyjną. Pierwsza hipoteza zakłada jakiś kierunek zależności, że dana grupa jest lepsza lub gorsza. W przypadku hipotezy niekierunkowej nie zakładamy żadnego kierunku różnic. Stwierdzamy tylko, że one będą, ale nie wiemy, w którą stronę. Gdy mam podstawy teoretyczne, tzw. przesłanki powinniśmy stawiać hipotezy kierunkowe. Gdy chcemy sprawdzić, czy mogą być jakieś różnice, choć nie wiemy na czyją korzyść powinniśmy postawić hipotezę niekierunkową. Stawianie hipotez kierunkowych i niekierunkowych uzależnia potem wybór rodzaju istotności w testowaniu uzyskanego wyniku w teście statystycznym.<br/>Test statystyczny przeprowadza się w czterech etapach:<ul class='defineList'><li>$$•` $$Sformułowanie hipotez: zerowej i alternatywnej.</li><br/><li>$$•` $$Obliczenie tzw. sprawdzianu testowego.</li><br/><li>$$•` $$Ustalenie poziomu istotności (a), obliczenie liczby stopni swobody (df), a następnie – na podstawie tych dwu wielkości – odczytanie z odpowiedniej tabeli tzw. wartości krytycznej.</li><br/><li>$$•` $$Podjęcie decyzji weryfikacyjnej.</li></ul>"]}, {
+            id: [20],
+            test: ["test09"],
+            name: ["Test t Studenta"],
+            href: ["http://pogotowiestatystyczne.pl/slowniczek/test-t-studenta/"],
+            contents: ["Test t Studenta jest metodą statystyczną służącą do porównania dwóch średnich między sobą jeśli znamy liczbę badanych osób, średnią arytmetyczną oraz wartość odchylenia standardowego lub wariancji.<br/>Jest to jeden z mniej skomplikowanych i bardzo często wykorzystywanych testów statystycznych używanych do weryfikacji hipotez. Dzięki niemu możemy dowiedzieć się czy dwie różne średnie są różne „niechcący” czy są różne istotnie statystycznie.<br/>Oto najczęściej wykorzystywanej wersji test t Studenta:<br/><ul class='defineList'><li>$$•` $$test t Studenta dla jednej próby </li><br/><li>$$•` $$ test t Studenta dla prób niezależnych </li><br/><li>$$•` $$ test t Studenta dla prób zależnych</li></ul>"]}, {
+            id: [21],
+            test: ["test09"],
+            name: ["P i wnioskowanie"],
+            href: ["http://www.ltw.com.pl/stat/egz/stata_lekcja3_part1.pdf"],
+            contents: ["P w badaniach naukowych oznacza graniczny poziom istotności statystycznej. Wartość poziomu pokreśla wynik wiarygodności rezultatu. Im wyższy p, tym mniejsza pewność, że relacja obserwowana w próbie odzwierciedla relacje pomiędzy badanymi zmiennymi w populacji generalnej. Poziom istotności p to inaczej prawdopodobieństwo popełnienia błędu nieprawidłowego przyjęcia hipotezy alternatywnej. Podczas wnioskowania statystycznego możemy popełnić 2 poważne błędy (i trzeci mało istotny) :<br/><ul class='defineList'><li>$$•` $$Błąd pierwszego rodzaju (<span class='math'>$α$</span>): Polega na odrzuceniu hipotezy zerowej, gdy tak naprawdę jest ona prawdziwa. Czyli gdy tak strasznie nam się spieszy do hipotezy alternatywnej, że nie patrząc na dane odrzucamy $H_0$</li><br/><li>$$•` $$Błąd drugiego rodzaju (<span class='math'>$β$</span>): Jest odwrotny, czyli gdy przyjmujemy na przekór wszystkiemu $H_0$. </li><br/><li>$$•` $$ Błąd trzeciego rodzaju (<span class='math'>$γ$</span>): Powstaje, gdy postawimy zła hipotezę kierunkową.</li></ul>"]}, {
+            id: [22],
+            test: ["test09"],
+            name: ["Obszar odrzucenia"],
+            href: ["https://mfiles.pl/pl/index.php/Obszar_odrzucenia"],
+            contents: ["Obszarem odrzucenia hipotezy statystycznej jest taki zbiór liczb że jeżeli sprawdzian przyjmie wartość z tego zbioru, to hipotezę zerową odrzucimy. Obszar odrzucenia nazywa się też obszarem krytycznym, który wyznaczają punkty (wartości) krytyczne. Obszar krytyczny ustalany jest tak, by przed pobraniem próby prawdopodobieństwo <span class='math'>$α$</span>, że sprawdzian znajdzie się w tym obszarze, przy założeniu, że hipoteza zerowa jest prawdziwa, było równe <span class='math'>$α$</span>. Wartość współczynnika <span class='math'>$α$</span> jest umowna. Zwykle przyjmuje się <span class='math'>$α=0.05$</span>, <span class='math'>$α=0.01$</span> lub <span class='math'>$α=0,001$</span>. Sprawia to, że ta sama hipoteza statystyczna może być istotna przy przyjętej,a priori większej wartości <span class='math'>$α$</span> i nieistotna przy mniejszej. Z tego powodu coraz częściej zamiast ustalać wartość <span class='math'>$α$</span> i podawać dwustanowo, że dana hipoteza jest istotna lub nieistotna np. na poziomie $0.05$, podaje się p-wartość (ang. p-value), czyli prawdopodobieństwo odrzucenia hipotezy i mówi np., że hipoteza jest istotna na poziomie $0.043$. Daje to więcej informacji i uniezależnia wyniki analizy od arbitralnie wybranego progu."]}, {
+            id: [23],
+            test: ["test09"],
+            name: ["Średnia arytmetyczna"],
+            href: ["http://www.naukowiec.org/wiedza/statystyka/srednia-arytmetyczna_716.html"],
+            contents: ["Średnia (arytmetyczna) jest najpopularniejszą statystyką należącą do grupy statystyk opisowych. Jest najbardziej znanym pojęciem statystycznym. Posiadając zbiór obserwacji, pochodzący np. z odpowiedzi 100 osób nie przedstawiamy wyniku dla każdej z nich z osobna. Podajemy za to jedną wartość która opisuje niejako całą naszą przebadaną grupę. Tą wartością właśnie jest średnia. Wartość średnia pochodzi z sumowania poszczególnych wyników i podzielenie tej sumy przez liczbę naszych obserwacji."]}, {
+            id: [24],
+            test: ["test09"],
+            name: [" Wariancja"],
+            href: ["http://www.naukowiec.org/wiedza/statystyka/wariancja_719.html"],
+            contents: ["Wariancja jest podstawową miarą zmienności obserwowanych wyników. Wariancja informuje o tym, jak duże jest zróżnicowanie wyników w danym zbiorze wyników (zmiennej). Inaczej mówiąc, czy wyniki są bardziej skoncentrowane wokół średniej, czy są małe różnice pomiędzy średnią a poszczególnymi wynikami czy może rozproszenie"]} ]; 
